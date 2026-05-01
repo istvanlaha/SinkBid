@@ -1,5 +1,14 @@
 import { create } from 'zustand'
 
+export function getBidStep(price) {
+  if (price <= 1000) return 10
+  if (price <= 10000) return 20
+  if (price <= 100000) return 50
+  if (price <= 1000000) return 100
+  if (price <= 2000000) return 200
+  return 500
+}
+
 export const CATEGORIES = [
   { id: 'all', key: 'all' },
   { id: 'orak', key: 'orak' },
@@ -29,7 +38,6 @@ export const INITIAL_PRODUCTS = [
     name: 'Omega Seamaster Diver 300m 42mm',
     description: 'Acél szíj, kék számlap, automatikus szerkezet. 2023-as gyártás, eredeti dobozban.',
     originalPrice: 5600,
-    
     entryFee: 20,
     emoji: '⌚',
     image: null,
@@ -40,7 +48,6 @@ export const INITIAL_PRODUCTS = [
     name: 'Tiffany & Co. Soleste Gyűrű',
     description: '18K fehér arany, 0.85ct gyémánt, eredeti dobozban, tanúsítvánnyal.',
     originalPrice: 8000,
-    
     entryFee: 20,
     emoji: '💎',
     image: null,
@@ -51,7 +58,6 @@ export const INITIAL_PRODUCTS = [
     name: 'Magyar szecessziós festmény, 1920',
     description: 'Ismeretlen mester — olaj, vászon, eredeti kerettel. Szakértői vélemény mellékelt.',
     originalPrice: 5000,
-    
     entryFee: 20,
     emoji: '🎨',
     image: null,
@@ -62,7 +68,6 @@ export const INITIAL_PRODUCTS = [
     name: 'Sony A7R V Full-Frame Tükör nélküli',
     description: '61 MP szenzor, 8K videó, dupla kártyafoglalat. Dobozos, 500 expozícióval.',
     originalPrice: 3800,
-   
     entryFee: 20,
     emoji: '📷',
     image: null,
@@ -70,10 +75,9 @@ export const INITIAL_PRODUCTS = [
   {
     id: 5,
     category: 'divat',
-    name: 'Hermès Birkin 30 — Togo Bőr',
+    name: 'Hermes Birkin 30 Togo Bőr',
     description: 'Caramel színű, palládium vasalat. 2022-es gyártás, teli garnitúrával.',
     originalPrice: 12000,
-   
     entryFee: 20,
     emoji: '👜',
     image: null,
@@ -81,30 +85,19 @@ export const INITIAL_PRODUCTS = [
   {
     id: 6,
     category: 'bakelit',
-    name: 'Pink Floyd — The Wall (1979, 1. kiadás)',
+    name: 'Pink Floyd The Wall 1979 1. kiadás',
     description: 'Eredeti Columbia kiadás, VG+ állapot, mindkét lemez hibátlan.',
     originalPrice: 480,
-    bidStep: 4.80,
     entryFee: 5,
     emoji: '🎵',
     image: null,
   },
 ]
 
-export function getBidStep(price) {
-  if (price <= 1000) return 10
-  if (price <= 10000) return 20
-  if (price <= 100000) return 50
-  if (price <= 1000000) return 100
-  if (price <= 2000000) return 200
-  return 500
-}
-
 function computeCurrentPrice(product, biddersCount) {
   const step = getBidStep(product.originalPrice)
   const drop = biddersCount * step
   return Math.max(0, product.originalPrice - drop)
-}
 }
 
 const initialBidStates = {}
@@ -134,6 +127,7 @@ export const useBidStore = create((set, get) => ({
     const state = get().bidStates[productId]
     if (state.joined) return
     const product = get().products.find(p => p.id === productId)
+    const step = getBidStep(product.originalPrice)
     const newCount = state.biddersCount + 1
     set(s => ({
       bidStates: {
@@ -142,7 +136,7 @@ export const useBidStore = create((set, get) => ({
           ...s.bidStates[productId],
           joined: true,
           biddersCount: newCount,
-          currentPrice: computeCurrentPrice(product, newCount),
+          currentPrice: Math.max(0, s.bidStates[productId].currentPrice - step),
         }
       }
     }))
@@ -152,6 +146,7 @@ export const useBidStore = create((set, get) => ({
     const state = get().bidStates[productId]
     if (state.sold) return
     const product = get().products.find(p => p.id === productId)
+    const step = getBidStep(product.originalPrice)
     const newCount = state.biddersCount + 1
     set(s => ({
       bidStates: {
@@ -159,7 +154,7 @@ export const useBidStore = create((set, get) => ({
         [productId]: {
           ...s.bidStates[productId],
           biddersCount: newCount,
-          currentPrice: computeCurrentPrice(product, newCount),
+          currentPrice: Math.max(0, s.bidStates[productId].currentPrice - step),
         }
       }
     }))
