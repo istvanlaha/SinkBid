@@ -4,12 +4,14 @@ import { initReactI18next } from 'react-i18next'
 const resources = {
   hu: {
     translation: {
-      nav: {
-        activeBids: 'Aktív licitek',
-        sold: 'Eladott tárgyak',
-        howItWorks: 'Hogyan működik',
-        login: 'Bejelentkezés',
-        register: 'Regisztráció',
+     nav: {
+  activeBids: 'Aktív licitek',
+  sold: 'Eladott tárgyak',
+  howItWorks: 'Hogyan működik',
+  categories: 'Kategóriák',
+  login: 'Bejelentkezés',
+  register: 'Regisztráció',
+},
       },
       hero: {
         tag: 'Fordított licit platform',
@@ -78,6 +80,7 @@ const resources = {
         activeBids: 'Active Bids',
         sold: 'Sold Items',
         howItWorks: 'How It Works',
+        categories: 'Categories',
         login: 'Sign In',
         register: 'Register',
       },
@@ -148,6 +151,7 @@ const resources = {
         activeBids: 'Активные торги',
         sold: 'Проданные товары',
         howItWorks: 'Как это работает',
+        categories: 'Категории',
         login: 'Войти',
         register: 'Регистрация',
       },
@@ -218,6 +222,7 @@ const resources = {
         activeBids: 'المزادات النشطة',
         sold: 'المباعة',
         howItWorks: 'كيف يعمل',
+        categories: 'الفئات',
         login: 'تسجيل الدخول',
         register: 'تسجيل',
       },
