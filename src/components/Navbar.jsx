@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { useBidStore } from '../store/bidStore'
+import { useBidStore, CATEGORIES } from '../store/bidStore'
 import i18n from '../i18n/i18n'
 import styles from './Navbar.module.css'
 
@@ -15,6 +15,7 @@ const LANGS = [
 export default function Navbar() {
   const { t } = useTranslation()
   const { lang, setLang } = useBidStore()
+  const [catOpen, setCatOpen] = useState(false)
 
   const handleLang = (e) => {
     const selected = e.target.value
@@ -24,15 +25,46 @@ export default function Navbar() {
     document.documentElement.lang = selected
   }
 
+  const sortedCats = [...CATEGORIES]
+    .filter(c => c.id !== 'all')
+    .sort((a, b) => t(`categories.${a.key}`).localeCompare(t(`categories.${b.key}`), 'hu'))
+
   return (
     <nav className={styles.nav}>
       <Link to="/" className={styles.logo}>
         Sink<span>Bid</span>
       </Link>
       <div className={styles.right}>
+
+        <Link to="/how" className={styles.link}>{t('nav.howItWorks')}</Link>
+
+        <div
+          className={styles.dropdown}
+          onMouseEnter={() => setCatOpen(true)}
+          onMouseLeave={() => setCatOpen(false)}
+        >
+          <span className={styles.link}>{t('nav.categories')} ▾</span>
+          {catOpen && (
+            <div className={styles.dropdownMenu}>
+              <div className={styles.dropdownGrid}>
+                {sortedCats.map(cat => (
+                  <Link
+                    key={cat.id}
+                    to={`/category/${cat.id}`}
+                    className={styles.dropdownItem}
+                    onClick={() => setCatOpen(false)}
+                  >
+                    {t(`categories.${cat.key}`)}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
         <Link to="/" className={styles.link}>{t('nav.activeBids')}</Link>
         <Link to="/sold" className={styles.link}>{t('nav.sold')}</Link>
-        <Link to="/how" className={styles.link}>{t('nav.howItWorks')}</Link>
+
         <div className={styles.authLinks}>
           <Link to="/login" className={styles.linkBtn}>{t('nav.login')}</Link>
           <Link to="/register" className={styles.linkBtnPrimary}>{t('nav.register')}</Link>
