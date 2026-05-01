@@ -29,7 +29,7 @@ export const INITIAL_PRODUCTS = [
     name: 'Omega Seamaster Diver 300m 42mm',
     description: 'Acél szíj, kék számlap, automatikus szerkezet. 2023-as gyártás, eredeti dobozban.',
     originalPrice: 5600,
-    bidStep: 19.80,
+    
     entryFee: 20,
     emoji: '⌚',
     image: null,
@@ -40,7 +40,7 @@ export const INITIAL_PRODUCTS = [
     name: 'Tiffany & Co. Soleste Gyűrű',
     description: '18K fehér arany, 0.85ct gyémánt, eredeti dobozban, tanúsítvánnyal.',
     originalPrice: 8000,
-    bidStep: 19.80,
+    
     entryFee: 20,
     emoji: '💎',
     image: null,
@@ -51,7 +51,7 @@ export const INITIAL_PRODUCTS = [
     name: 'Magyar szecessziós festmény, 1920',
     description: 'Ismeretlen mester — olaj, vászon, eredeti kerettel. Szakértői vélemény mellékelt.',
     originalPrice: 5000,
-    bidStep: 19.80,
+    
     entryFee: 20,
     emoji: '🎨',
     image: null,
@@ -62,7 +62,7 @@ export const INITIAL_PRODUCTS = [
     name: 'Sony A7R V Full-Frame Tükör nélküli',
     description: '61 MP szenzor, 8K videó, dupla kártyafoglalat. Dobozos, 500 expozícióval.',
     originalPrice: 3800,
-    bidStep: 19.80,
+   
     entryFee: 20,
     emoji: '📷',
     image: null,
@@ -73,7 +73,7 @@ export const INITIAL_PRODUCTS = [
     name: 'Hermès Birkin 30 — Togo Bőr',
     description: 'Caramel színű, palládium vasalat. 2022-es gyártás, teli garnitúrával.',
     originalPrice: 12000,
-    bidStep: 19.80,
+   
     entryFee: 20,
     emoji: '👜',
     image: null,
