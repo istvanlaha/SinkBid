@@ -91,9 +91,20 @@ export const INITIAL_PRODUCTS = [
   },
 ]
 
+export function getBidStep(price) {
+  if (price <= 1000) return 10
+  if (price <= 10000) return 20
+  if (price <= 100000) return 50
+  if (price <= 1000000) return 100
+  if (price <= 2000000) return 200
+  return 500
+}
+
 function computeCurrentPrice(product, biddersCount) {
-  const drop = biddersCount * product.bidStep
+  const step = getBidStep(product.originalPrice)
+  const drop = biddersCount * step
   return Math.max(0, product.originalPrice - drop)
+}
 }
 
 const initialBidStates = {}
