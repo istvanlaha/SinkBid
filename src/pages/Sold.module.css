@@ -1,0 +1,121 @@
+.wrap { min-height: 100vh; }
+
+.header {
+  background: var(--dark);
+  padding: 3rem 2rem 2.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-gold);
+}
+
+.headerTag {
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.headerTitle {
+  font-family: var(--font-display);
+  font-size: 44px;
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+.headerSub {
+  color: rgba(255,255,255,0.38);
+  font-size: 14px;
+}
+
+.main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+}
+
+.empty {
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.emptyIcon { font-size: 48px; margin-bottom: 1rem; opacity: 0.4; }
+
+.emptyText {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+}
+
+.emptySub { font-size: 13px; color: var(--text-muted); }
+
+.catGroup { margin-bottom: 2.5rem; }
+
+.catGroupLabel {
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.5px solid var(--border-light);
+}
+
+.soldGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.soldCard {
+  background: var(--white);
+  border: 0.5px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.soldEmoji { font-size: 28px; flex-shrink: 0; }
+
+.soldInfo { flex: 1; }
+
+.soldName {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--dark);
+  margin-bottom: 3px;
+}
+
+.soldPrices {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.soldFinal {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--dark);
+}
+
+.soldOrig {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.soldBadge {
+  background: var(--gold-pale);
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+}
