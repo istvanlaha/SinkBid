@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useBidStore } from '../store/bidStore'
+import { useBidStore, getBidStep } from '../store/bidStore'
 import styles from './BidCard.module.css'
 
 function formatTime(seconds) {
@@ -117,7 +117,7 @@ export default function BidCard({ product }) {
           </div>
           <div className={styles.statDivider} />
           <div className={styles.statItem}>
-            <div className={styles.statVal}>{product.bidStep.toFixed(2).replace('.', ',')} EUR</div>
+            <div className={styles.statVal}>{getBidStep(product.originalPrice).toLocaleString('de-DE')} EUR</div>
             <div className={styles.statLbl}>{t('bid.step')}</div>
           </div>
           <div className={styles.statDivider} />
