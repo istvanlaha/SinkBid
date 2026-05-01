@@ -4,14 +4,13 @@ import { initReactI18next } from 'react-i18next'
 const resources = {
   hu: {
     translation: {
-     nav: {
-  activeBids: 'Aktív licitek',
-  sold: 'Eladott tárgyak',
-  howItWorks: 'Hogyan működik',
-  categories: 'Kategóriák',
-  login: 'Bejelentkezés',
-  register: 'Regisztráció',
-},
+      nav: {
+        activeBids: 'Aktív licitek',
+        sold: 'Eladott tárgyak',
+        howItWorks: 'Hogyan működik',
+        categories: 'Kategóriák',
+        login: 'Bejelentkezés',
+        register: 'Regisztráció',
       },
       hero: {
         tag: 'Fordított licit platform',
@@ -297,3 +296,4 @@ i18n.use(initReactI18next).init({
 })
 
 export default i18n
+
