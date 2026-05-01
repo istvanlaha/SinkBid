@@ -12,7 +12,7 @@ export default function Footer() {
           <Link to="/sold" className={styles.link}>Eladott tárgyak</Link>
           <Link to="/how" className={styles.link}>Hogyan működik</Link>
         </div>
-        <div className={styles.copy}>© 2025 SinkBid. Minden jog fenntartva.</div>
+        <div className={styles.copy}>© 2026 By C & Kormi Minden jog fenntartva.</div>
       </div>
     </footer>
   )
