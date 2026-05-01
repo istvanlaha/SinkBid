@@ -1,0 +1,372 @@
+.card {
+  background: var(--white);
+  border: 0.5px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.09);
+}
+
+.soldCard {
+  opacity: 0.7;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.soldOverlay {
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  background: var(--light);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.soldEmoji { font-size: 48px; margin-bottom: 0.5rem; }
+.soldLabel {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.soldPrice {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--dark);
+}
+.soldSaving {
+  font-size: 12px;
+  color: var(--gold);
+  letter-spacing: 1px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(26,24,20,0.94);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.overlayInner { text-align: center; width: 100%; }
+
+.overlayTitle {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 0.75rem;
+}
+
+.overlayTimer {
+  font-family: var(--font-display);
+  font-size: 64px;
+  font-weight: 300;
+  color: #E74C3C;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s;
+}
+
+.overlayTimer.urgent {
+  color: #FF0000;
+  animation: urgentPulse 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes urgentPulse {
+  from { opacity: 1; }
+  to { opacity: 0.5; }
+}
+
+.overlayNote {
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  max-width: 240px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btnPay {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  background: var(--gold);
+  color: var(--white);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  margin-bottom: 8px;
+  transition: background var(--transition);
+  font-family: var(--font-body);
+}
+
+.btnPay:hover { background: var(--gold-light); }
+
+.btnCancel {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  color: rgba(255,255,255,0.35);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: color var(--transition);
+}
+
+.btnCancel:hover { color: rgba(255,255,255,0.65); }
+
+.imgWrap {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: var(--light);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imgPlaceholder {
+  font-size: 64px;
+  opacity: 0.3;
+  user-select: none;
+}
+
+.liveBadge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--dark);
+  color: var(--gold-light);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.liveDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #E74C3C;
+  display: inline-block;
+  animation: livePulse 1.4s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+.biddersBadge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(26,24,20,0.72);
+  color: rgba(255,255,255,0.65);
+  font-size: 10px;
+  padding: 4px 9px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.5px;
+}
+
+.body {
+  padding: 1.1rem 1.2rem 1.2rem;
+}
+
+.catLabel {
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 5px;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--dark);
+  line-height: 1.2;
+  margin-bottom: 5px;
+}
+
+.desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 1rem;
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 0.875rem;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.priceLabel {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.priceGroup {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.price {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 300;
+  color: var(--dark);
+}
+
+.priceAnimate {
+  animation: priceDrop 0.35s ease-out;
+}
+
+@keyframes priceDrop {
+  0% { color: #C0392B; transform: translateY(-4px); }
+  100% { color: var(--dark); transform: translateY(0); }
+}
+
+.priceCurrency {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.priceOrig {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-decoration: line-through;
+  margin-left: 4px;
+}
+
+.stats {
+  background: var(--light);
+  border-radius: var(--radius-sm);
+  padding: 9px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.875rem;
+}
+
+.statItem { text-align: center; flex: 1; }
+
+.statVal {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--dark);
+  line-height: 1.2;
+}
+
+.statLbl {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.statDivider {
+  width: 0.5px;
+  height: 28px;
+  background: var(--border-light);
+  flex-shrink: 0;
+}
+
+.btnJoin {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: var(--dark);
+  color: var(--gold-light);
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.btnJoin:hover { background: var(--mid); }
+
+.btnJoined {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: var(--light-mid);
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 0.5px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  cursor: default;
+  margin-bottom: 8px;
+}
+
+.btnBuyNow {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  color: var(--dark);
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 1px solid var(--gold);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.btnBuyNow:hover {
+  background: var(--gold);
+  color: var(--white);
+}
