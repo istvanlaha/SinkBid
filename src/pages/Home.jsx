@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useBidStore, CATEGORIES, EUR_TO_USD } from '../store/bidStore'
-import CategoryNav from '../components/CategoryNav'
+import { useNavigate } from 'react-router-dom'
+import { useBidStore, CATEGORIES, EUR_TO_USD, getBidStep } from '../store/bidStore'
 import BidCard from '../components/BidCard'
 import styles from './Home.module.css'
 
@@ -34,6 +34,7 @@ function formatPrice(price, currency) {
 
 export default function Home() {
   const { t } = useTranslation()
+  const navigate = useNavigate()
   const { getFiltered, getByCategory, externalBid, bidStates, products, currency, setCurrency } = useBidStore()
   const intervalRef = useRef(null)
 
@@ -75,7 +76,7 @@ export default function Home() {
         </div>
       </section>
 
-     <main className={styles.main} id="active-bids">
+      <main className={styles.main} id="active-bids">
 
         <div className={styles.currencyBar}>
           <span className={styles.currencyLabel}>Currency:</span>
@@ -90,34 +91,57 @@ export default function Home() {
         </div>
 
         {SHOWCASE_CATEGORIES.map(cat => {
-          const items = getByCategory(cat.id).slice(0, 8)
+          const items = getByCategory(cat.id).slice(0, 9)
+          if (items.length === 0) return null
           return (
             <section key={cat.id} className={styles.catSection}>
               <div className={styles.catSectionHead}>
                 <h2 className={styles.catSectionTitle}>{cat.label}</h2>
-                <span className={styles.catSectionLink}>View all →</span>
+                <span
+                  className={styles.catSectionLink}
+                  onClick={() => navigate(`/category/${cat.id}`)}
+                >
+                  View all →
+                </span>
               </div>
               <div className={styles.catGrid}>
                 {items.map(product => {
                   const state = bidStates[product.id]
-                  const step = Math.floor(product.originalPrice <= 1000 ? 10 : product.originalPrice <= 10000 ? 20 : product.originalPrice <= 100000 ? 50 : 100)
+                  const step = getBidStep(product.originalPrice)
                   const savings = Math.round((1 - state.currentPrice / product.originalPrice) * 100)
                   return (
                     <div key={product.id} className={styles.miniCard}>
-                    <div className={styles.miniCardImg}>
-  {product.image ? (
-    <img src={product.image} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-  ) : (
-    <div className={styles.miniCardEmoji}>{product.emoji}</div>
-  )}
-                        <div className={styles.miniLiveBadge}>
-                          <span className={styles.miniLiveDot} />
-                          Live
+                      <div
+                        className={styles.miniCardImg}
+                        onClick={() => navigate(`/product/${product.id}`)}
+                      >
+                        {product.image ? (
+                          <img
+                            src={product.image}
+                            alt={product.name}
+                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                          />
+                        ) : (
+                          <div className={styles.miniCardEmoji}>{product.emoji}</div>
+                        )}
+                        <div className={styles.miniLiveBanner}>
+                          <div className={styles.miniLiveBadge}>
+                            <span className={styles.miniLiveDot} />
+                            Live
+                          </div>
+                          <div className={styles.miniSavingBadge}>-{savings}%</div>
                         </div>
                       </div>
                       <div className={styles.miniCardBody}>
-                        <div className={styles.miniCardName}>{product.name}</div>
-                        <div className={styles.miniCardDesc}>{product.description.substring(0, 60)}...</div>
+                        <div
+                          className={styles.miniCardName}
+                          onClick={() => navigate(`/product/${product.id}`)}
+                        >
+                          {product.name}
+                        </div>
+                        <div className={styles.miniCardDesc}>
+                          {product.description.substring(0, 60)}...
+                        </div>
                         <div className={styles.miniCardPriceRow}>
                           <span className={styles.miniCardPrice}>
                             {formatPrice(state.currentPrice, currency)}
@@ -127,7 +151,9 @@ export default function Home() {
                           </span>
                         </div>
                         <div className={styles.miniCardFooter}>
-                          <span className={styles.miniCardStep}>Step: {formatPrice(step, currency)}</span>
+                          <span className={styles.miniCardStep}>
+                            Step: {formatPrice(step, currency)}
+                          </span>
                           <span className={styles.miniCardSaving}>-{savings}%</span>
                         </div>
                       </div>
