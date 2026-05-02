@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import Sold from './pages/Sold'
 import HowItWorks from './pages/HowItWorks'
+import Category from './pages/Category'
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/sold" element={<Sold />} />
           <Route path="/how" element={<HowItWorks />} />
+          <Route path="/category/:catId" element={<Category />} />
         </Routes>
       </div>
       <Footer />
