@@ -96,4 +96,139 @@ export const INITIAL_PRODUCTS = [
   { id: 50, category: 'mobil', name: 'Samsung Galaxy S24 Ultra 512GB', description: 'Titanium Black, S Pen included, unlocked. Sealed box.', originalPrice: 1280, emoji: '📱', image: null },
   { id: 51, category: 'mobil', name: 'Google Pixel 8 Pro 128GB', description: 'Obsidian, factory unlocked, 7 years of updates guaranteed.', originalPrice: 890, emoji: '📱', image: null },
   { id: 52, category: 'mobil', name: 'OnePlus 12 256GB Silky Black', description: 'Snapdragon 8 Gen 3, 100W charging, Hasselblad camera. Sealed.', originalPrice: 780, emoji: '📱', image: null },
-  { id: 53, category: 'mobil', nam
+  { id: 53, category: 'mobil', name: 'Apple iPhone 14 Pro 128GB Deep Purple', description: 'Unlocked, Dynamic Island, 48MP camera. Excellent condition.', originalPrice: 950, emoji: '📱', image: null },
+  { id: 54, category: 'mobil', name: 'Vertu Signature Touch For Bentley', description: 'Luxury phone, sapphire screen, crocodile leather. Collector item.', originalPrice: 8500, emoji: '📱', image: null },
+  { id: 55, category: 'mobil', name: 'Sony Xperia 1 V 256GB', description: '4K OLED display, Zeiss optics, 3.5mm jack. Sealed box.', originalPrice: 1100, emoji: '📱', image: null },
+  { id: 56, category: 'mobil', name: 'Motorola Edge 40 Pro 256GB', description: 'Interstellar Black, 125W TurboPower, 165Hz display.', originalPrice: 680, emoji: '📱', image: null },
+]
+
+function computeCurrentPrice(product, biddersCount) {
+  const step = getBidStep(product.originalPrice)
+  const drop = biddersCount * step
+  return Math.max(0, product.originalPrice - drop)
+}
+
+const initialBidStates = {}
+INITIAL_PRODUCTS.forEach(p => {
+  const biddersCount = Math.floor(Math.random() * 15) + 2
+  initialBidStates[p.id] = {
+    biddersCount,
+    currentPrice: computeCurrentPrice(p, biddersCount),
+    joined: false,
+    buying: false,
+    timerSeconds: 300,
+    sold: false,
+    soldPrice: null,
+  }
+})
+
+export const useBidStore = create((set, get) => ({
+  products: INITIAL_PRODUCTS,
+  bidStates: initialBidStates,
+  activeCategory: 'all',
+  lang: 'hu',
+  currency: 'EUR',
+
+  setCategory: (cat) => set({ activeCategory: cat }),
+  setLang: (lang) => set({ lang }),
+  setCurrency: (currency) => set({ currency }),
+
+  joinBid: (productId) => {
+    const state = get().bidStates[productId]
+    if (state.joined) return
+    const product = get().products.find(p => p.id === productId)
+    const step = getBidStep(product.originalPrice)
+    set(s => ({
+      bidStates: {
+        ...s.bidStates,
+        [productId]: {
+          ...s.bidStates[productId],
+          joined: true,
+          biddersCount: s.bidStates[productId].biddersCount + 1,
+          currentPrice: Math.max(0, s.bidStates[productId].currentPrice - step),
+        }
+      }
+    }))
+  },
+
+  externalBid: (productId) => {
+    const state = get().bidStates[productId]
+    if (state.sold) return
+    const product = get().products.find(p => p.id === productId)
+    const step = getBidStep(product.originalPrice)
+    set(s => ({
+      bidStates: {
+        ...s.bidStates,
+        [productId]: {
+          ...s.bidStates[productId],
+          biddersCount: s.bidStates[productId].biddersCount + 1,
+          currentPrice: Math.max(0, s.bidStates[productId].currentPrice - step),
+        }
+      }
+    }))
+  },
+
+  startBuy: (productId) => {
+    set(s => ({
+      bidStates: {
+        ...s.bidStates,
+        [productId]: { ...s.bidStates[productId], buying: true, timerSeconds: 300 }
+      }
+    }))
+  },
+
+  cancelBuy: (productId) => {
+    set(s => ({
+      bidStates: {
+        ...s.bidStates,
+        [productId]: { ...s.bidStates[productId], buying: false, timerSeconds: 300 }
+      }
+    }))
+  },
+
+  tickTimer: (productId) => {
+    const state = get().bidStates[productId]
+    if (!state.buying) return
+    const newVal = state.timerSeconds - 1
+    if (newVal <= 0) {
+      set(s => ({
+        bidStates: {
+          ...s.bidStates,
+          [productId]: { ...s.bidStates[productId], buying: false, timerSeconds: 300 }
+        }
+      }))
+    } else {
+      set(s => ({
+        bidStates: {
+          ...s.bidStates,
+          [productId]: { ...s.bidStates[productId], timerSeconds: newVal }
+        }
+      }))
+    }
+  },
+
+  completePurchase: (productId) => {
+    const state = get().bidStates[productId]
+    set(s => ({
+      bidStates: {
+        ...s.bidStates,
+        [productId]: {
+          ...s.bidStates[productId],
+          sold: true,
+          buying: false,
+          soldPrice: state.currentPrice,
+        }
+      }
+    }))
+  },
+
+  getFiltered: () => {
+    const { products, activeCategory } = get()
+    if (activeCategory === 'all') return products
+    return products.filter(p => p.category === activeCategory)
+  },
+
+  getByCategory: (catId) => {
+    return get().products.filter(p => p.category === catId)
+  },
+}))
