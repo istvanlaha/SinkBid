@@ -1,38 +1,85 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import styles from './Footer.module.css'
 
 export default function Footer() {
+  const { t } = useTranslation()
+
   return (
     <footer className={styles.footer}>
-      <div className={styles.inner}>
-        <div className={styles.top}>
-          <div className={styles.brand}>
-            <div className={styles.logo}>SinkBid</div>
-            <div className={styles.tagline}>Fordított licit platform</div>
-          </div>
-
-          <div className={styles.col}>
-            <div className={styles.colTitle}>Navigáció</div>
-            <Link to="/" className={styles.link}>Aktív licitek</Link>
-            <Link to="/sold" className={styles.link}>Eladott tárgyak</Link>
-            <Link to="/how" className={styles.link}>Hogyan működik</Link>
-          </div>
-
-          <div className={styles.col}>
-            <div className={styles.colTitle}>Betekintési díj / Licit lépcső</div>
-            <div className={styles.stepRow}><span>100 — 1.000 EUR</span><span>10 EUR</span></div>
-            <div className={styles.stepRow}><span>1.001 — 10.000 EUR</span><span>20 EUR</span></div>
-            <div className={styles.stepRow}><span>10.001 — 100.000 EUR</span><span>50 EUR</span></div>
-            <div className={styles.stepRow}><span>100.001 — 1.000.000 EUR</span><span>100 EUR</span></div>
-            <div className={styles.stepRow}><span>1.000.001 — 2.000.000 EUR</span><span>200 EUR</span></div>
-            <div className={styles.stepRow}><span>2.000.001 EUR felett</span><span>500 EUR</span></div>
-          </div>
+      <div className={styles.top}>
+        <div className={styles.brand}>
+          <div className={styles.logo}>Sink<span>Bid</span></div>
+          <p className={styles.tagline}>The reverse auction platform for exceptional items.</p>
         </div>
 
-        <div className={styles.bottom}>
-          <div className={styles.copy}>© 2025 SinkBid. Minden jog fenntartva.</div>
-          <div className={styles.by}>By C & Kormi</div>
+        <div className={styles.cols}>
+          <div className={styles.col}>
+            <div className={styles.colTitle}>Buy</div>
+            <Link to="/active" className={styles.colLink}>Active Bids</Link>
+            <Link to="/sold" className={styles.colLink}>Sold Items</Link>
+            <Link to="/how" className={styles.colLink}>How It Works</Link>
+            <Link to="/buyer-registration" className={styles.colLink}>Register as Buyer</Link>
+            <Link to="/buyer-terms" className={styles.colLink}>Buyer Terms</Link>
+          </div>
+
+          <div className={styles.col}>
+            <div className={styles.colTitle}>Sell</div>
+            <Link to="/seller-registration" className={styles.colLink}>Register as Seller</Link>
+            <Link to="/seller-terms" className={styles.colLink}>Seller Terms</Link>
+            <Link to="/how" className={styles.colLink}>Seller Guide</Link>
+            <Link to="/fees" className={styles.colLink}>Fees</Link>
+          </div>
+
+          <div className={styles.col}>
+            <div className={styles.colTitle}>Categories</div>
+            <Link to="/category/orak" className={styles.colLink}>Watches</Link>
+            <Link to="/category/ekszer" className={styles.colLink}>Jewellery</Link>
+            <Link to="/category/muveszet" className={styles.colLink}>Art</Link>
+            <Link to="/category/jarmuvek" className={styles.colLink}>Vehicles</Link>
+            <Link to="/category/ingatlan" className={styles.colLink}>Real Estate</Link>
+          </div>
+
+          <div className={styles.col}>
+            <div className={styles.colTitle}>About</div>
+            <Link to="/about" className={styles.colLink}>About SinkBid</Link>
+            <Link to="/contact" className={styles.colLink}>Contact Us</Link>
+            <Link to="/privacy" className={styles.colLink}>Privacy Policy</Link>
+            <Link to="/terms" className={styles.colLink}>Terms of Use</Link>
+            <Link to="/cookies" className={styles.colLink}>Cookie Policy</Link>
+          </div>
+
+          <div className={styles.col}>
+            <div className={styles.colTitle}>Support</div>
+            <Link to="/faq" className={styles.colLink}>FAQ</Link>
+            <Link to="/contact" className={styles.colLink}>Help Center</Link>
+            <Link to="/dispute" className={styles.colLink}>Dispute Resolution</Link>
+            <Link to="/accessibility" className={styles.colLink}>Accessibility</Link>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.bidStepBar}>
+        <div className={styles.bidStepTitle}>Entry fee & Bid step</div>
+        <div className={styles.bidStepRow}>
+          <span>€100–1,000 <strong>€10</strong></span>
+          <span>€1,001–10,000 <strong>€20</strong></span>
+          <span>€10,001–100,000 <strong>€50</strong></span>
+          <span>€100,001–1M <strong>€100</strong></span>
+          <span>€1M–2M <strong>€200</strong></span>
+          <span>€2M+ <strong>€500</strong></span>
+        </div>
+      </div>
+
+      <div className={styles.bottom}>
+        <div className={styles.bottomLeft}>
+          © 2025 SinkBid. All rights reserved. By C & Kormi.
+        </div>
+        <div className={styles.bottomRight}>
+          <Link to="/terms" className={styles.bottomLink}>Terms of Use</Link>
+          <Link to="/privacy" className={styles.bottomLink}>Privacy Policy</Link>
+          <Link to="/cookies" className={styles.bottomLink}>Cookie Policy</Link>
         </div>
       </div>
     </footer>
