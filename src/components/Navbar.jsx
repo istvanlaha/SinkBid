@@ -10,9 +10,7 @@ const LANGS = [
   { code: 'en', label: 'EN', dir: 'ltr' },
   { code: 'de', label: 'DE', dir: 'ltr' },
   { code: 'zh', label: 'ZH', dir: 'ltr' },
-]
-]
-
+];
 export default function Navbar() {
   const { t } = useTranslation()
   const { lang, setLang } = useBidStore()
