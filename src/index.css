@@ -31,11 +31,12 @@
   --sand-dark: #8A7A5A;
   --sand-text: #5A4A2A;
   --teak: #4A3F2A;
-  --teak-mid: rgba(212,178,120,0.1);
-  --teak-border: rgba(212,178,120,0.2);
-  --teak-gold: #D4B278;
-  --teak-light: #F5EDD8;
-  --teak-muted: rgba(245,237,216,0.6);
+ --teak: #F0E8D5;
+  --teak-mid: rgba(212,178,120,0.15);
+  --teak-border: rgba(184,150,78,0.2);
+  --teak-gold: #8A6A2A;
+  --teak-light: #3D2E10;
+  --teak-muted: rgba(90,74,42,0.65);
 }
 }
 
