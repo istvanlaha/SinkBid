@@ -27,7 +27,7 @@ export default function HowItWorks() {
           <div className={styles.step}>
             <div className={styles.stepN}>02</div>
             <div className={styles.stepContent}>
-              <h3 className={styles.stepTitle}>Fizess betekintési díjat — Ezzel már csökkentve az ár</h3>
+              <h3 className={styles.stepTitle} style={{whiteSpace: 'nowrap'}}>Fizess betekintési díjat — az ár azonnal csökken</h3>
               <p className={styles.stepDesc}>A betekintési díj befizetésével belépsz a licitbe és élőben látod az aktuális árat.</p>
               <p className={styles.stepDesc}><strong>Ez az összeg beleszámít a végső vételárba.</strong></p>
               <p className={styles.stepDesc}>Fontos: egyetlen betekintési díj befizetésével már jogod van a terméket bármely áron elvinni — akkor is, ha az ár azóta tovább csökkent mások befizetései miatt. Ha úgy döntesz hogy megveszed, 5 percen belül ki kell fizetned a fennmaradó összeget.</p>
