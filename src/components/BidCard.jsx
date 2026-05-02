@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useNavigate } from 'react-router-dom'
 import { useBidStore, getBidStep, EUR_TO_USD } from '../store/bidStore'
 import styles from './BidCard.module.css'
-
 function formatTime(seconds) {
   const m = Math.floor(seconds / 60)
   const s = seconds % 60
@@ -19,6 +19,7 @@ function formatPrice(price, currency) {
 export default function BidCard({ product }) {
   const { t } = useTranslation()
   const { bidStates, joinBid, startBuy, cancelBuy, tickTimer, completePurchase, currency } = useBidStore()
+  const navigate = useNavigate()
   const state = bidStates[product.id]
   const timerRef = useRef(null)
   const prevPrice = useRef(state.currentPrice)
