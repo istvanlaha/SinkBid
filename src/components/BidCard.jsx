@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useBidStore, getBidStep } from '../store/bidStore'
+import { useBidStore, getBidStep, EUR_TO_USD } from '../store/bidStore'
 import styles from './BidCard.module.css'
 
 function formatTime(seconds) {
@@ -9,13 +9,16 @@ function formatTime(seconds) {
   return `${m}:${s.toString().padStart(2, '0')}`
 }
 
-function formatPrice(price) {
-  return price.toLocaleString('de-DE', { minimumFractionDigits: 0, maximumFractionDigits: 0 })
+function formatPrice(price, currency) {
+  if (currency === 'USD') {
+    return '$' + Math.round(price * EUR_TO_USD).toLocaleString('de-DE')
+  }
+  return '€' + Math.round(price).toLocaleString('de-DE')
 }
 
 export default function BidCard({ product }) {
   const { t } = useTranslation()
-  const { bidStates, joinBid, startBuy, cancelBuy, tickTimer, completePurchase } = useBidStore()
+  const { bidStates, joinBid, startBuy, cancelBuy, tickTimer, completePurchase, currency } = useBidStore()
   const state = bidStates[product.id]
   const timerRef = useRef(null)
   const prevPrice = useRef(state.currentPrice)
@@ -40,6 +43,7 @@ export default function BidCard({ product }) {
   }, [state.currentPrice])
 
   const savings = Math.round((1 - state.currentPrice / product.originalPrice) * 100)
+  const step = getBidStep(product.originalPrice)
   const isUrgent = state.timerSeconds <= 60 && state.buying
 
   if (state.sold) {
@@ -48,12 +52,8 @@ export default function BidCard({ product }) {
         <div className={styles.soldOverlay}>
           <div className={styles.soldEmoji}>{product.emoji}</div>
           <div className={styles.soldLabel}>{t('bid.sold')}</div>
-          <div className={styles.soldPrice}>
-            {formatPrice(state.soldPrice)} EUR
-          </div>
-          <div className={styles.soldSaving}>
-            {savings}% megtakarítás
-          </div>
+          <div className={styles.soldPrice}>{formatPrice(state.soldPrice, currency)}</div>
+          <div className={styles.soldSaving}>-{savings}%</div>
         </div>
       </div>
     )
@@ -85,62 +85,52 @@ export default function BidCard({ product }) {
         ) : (
           <div className={styles.imgPlaceholder}>{product.emoji}</div>
         )}
-        <div className={styles.liveBadge}>
-          <span className={styles.liveDot} />
-          {t('bid.live')}
-        </div>
-        <div className={styles.biddersBadge}>
-          {state.biddersCount} {t('bid.bidders')}
+        <div className={styles.liveBanner}>
+          <div className={styles.liveBadge}>
+            <span className={styles.liveDot} />
+            {t('bid.live')}
+          </div>
+          <div className={styles.savingBadge}>-{savings}%</div>
         </div>
       </div>
 
       <div className={styles.body}>
         <div className={styles.catLabel}>{t(`categories.${product.category}`)}</div>
         <h3 className={styles.name}>{product.name}</h3>
-        <p className={styles.desc}>{product.description}</p>
+        <p className={styles.desc}>{product.description.substring(0, 80)}...</p>
 
         <div className={styles.priceRow}>
-          <span className={styles.priceLabel}>{t('bid.currentPrice')}</span>
-          <div className={styles.priceGroup}>
-            <span className={styles.price} ref={priceRef}>
-              {formatPrice(state.currentPrice)}
-            </span>
-            <span className={styles.priceCurrency}> EUR</span>
-            <span className={styles.priceOrig}>{formatPrice(product.originalPrice)} EUR</span>
+          <div>
+            <div className={styles.priceLabel}>{t('bid.currentPrice')}</div>
+            <div className={styles.priceGroup}>
+              <span className={styles.price} ref={priceRef}>
+                {formatPrice(state.currentPrice, currency)}
+              </span>
+              <span className={styles.priceOrig}>{formatPrice(product.originalPrice, currency)}</span>
+            </div>
+          </div>
+          <div className={styles.stepBox}>
+            <div className={styles.stepLabel}>{t('bid.step')}</div>
+            <div className={styles.stepVal}>{formatPrice(step, currency)}</div>
           </div>
         </div>
 
-        <div className={styles.stats}>
-          <div className={styles.statItem}>
-            <div className={styles.statVal}>{state.biddersCount}×</div>
-            <div className={styles.statLbl}>{t('bid.insight')}</div>
-          </div>
-          <div className={styles.statDivider} />
-          <div className={styles.statItem}>
-            <div className={styles.statVal}>{getBidStep(product.originalPrice).toLocaleString('de-DE')} EUR</div>
-            <div className={styles.statLbl}>{t('bid.step')}</div>
-          </div>
-          <div className={styles.statDivider} />
-          <div className={styles.statItem}>
-            <div className={styles.statVal}>{savings}%</div>
-            <div className={styles.statLbl}>{t('bid.saving')}</div>
-          </div>
+        <div className={styles.btnRow}>
+          {!state.joined ? (
+            <button className={styles.btnJoin} onClick={() => joinBid(product.id)}>
+              Licitálok — {formatPrice(step, currency)}
+            </button>
+          ) : (
+            <>
+              <button className={styles.btnJoined} disabled>
+                Belépve ✓
+              </button>
+              <button className={styles.btnBuyNow} onClick={() => startBuy(product.id)}>
+                {t('bid.buyNow')}
+              </button>
+            </>
+          )}
         </div>
-
-        {!state.joined ? (
-          <button className={styles.btnJoin} onClick={() => joinBid(product.id)}>
-            {t('bid.joinBid')}
-          </button>
-        ) : (
-          <>
-            <button className={styles.btnJoined} disabled>
-              {t('bid.joined')}
-            </button>
-            <button className={styles.btnBuyNow} onClick={() => startBuy(product.id)}>
-              {t('bid.buyNow')}
-            </button>
-          </>
-        )}
       </div>
     </div>
   )
