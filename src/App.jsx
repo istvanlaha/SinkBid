@@ -13,7 +13,8 @@ export default function App() {
       <Navbar />
       <div style={{ flex: 1 }}>
         <Routes>
-          <Route path="/" element={<Home />} />
+         <Route path="/" element={<Home />} />
+<Route path="/active" element={<Home />} />
           <Route path="/sold" element={<Sold />} />
           <Route path="/how" element={<HowItWorks />} />
           <Route path="/category/:catId" element={<Category />} />
