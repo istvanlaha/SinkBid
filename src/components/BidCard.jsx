@@ -80,7 +80,7 @@ export default function BidCard({ product }) {
         </div>
       )}
 
-      <div className={styles.imgWrap}>
+     <div className={styles.imgWrap} onClick={() => navigate(`/product/${product.id}`)} style={{cursor: 'pointer'}}>
         {product.image ? (
           <img src={product.image} alt={product.name} className={styles.img} />
         ) : (
@@ -96,8 +96,8 @@ export default function BidCard({ product }) {
       </div>
 
       <div className={styles.body}>
-        <div className={styles.catLabel}>{t(`categories.${product.category}`)}</div>
-        <h3 className={styles.name}>{product.name}</h3>
+       <div className={styles.catLabel}>{t(`categories.${product.category}`)}</div>
+        <h3 className={styles.name} onClick={() => navigate(`/product/${product.id}`)} style={{cursor: 'pointer'}}>{product.name}</h3>
         <p className={styles.desc}>{product.description.substring(0, 80)}...</p>
 
         <div className={styles.priceRow}>
