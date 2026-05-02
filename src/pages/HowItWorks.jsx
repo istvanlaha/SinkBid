@@ -12,34 +12,6 @@ export default function HowItWorks() {
         <h1 className={styles.heroTitle}>Hogyan működik a SinkBid?</h1>
       </div>
 
-      <div className={styles.stepsStrip}>
-        <div className={styles.step}>
-          <div className={styles.stepIcon}>🔍</div>
-          <div className={styles.stepArrow}>→</div>
-          <div className={styles.stepLabel}>Böngéssz</div>
-        </div>
-        <div className={styles.step}>
-          <div className={styles.stepIcon}>💳</div>
-          <div className={styles.stepArrow}>→</div>
-          <div className={styles.stepLabel}>Fizess betekintési díjat</div>
-        </div>
-        <div className={styles.step}>
-          <div className={styles.stepIcon}>👁️</div>
-          <div className={styles.stepArrow}>→</div>
-          <div className={styles.stepLabel}>Figyeld az árat</div>
-        </div>
-        <div className={styles.step}>
-          <div className={styles.stepIcon}>🛒</div>
-          <div className={styles.stepArrow}>→</div>
-          <div className={styles.stepLabel}>Vedd meg most</div>
-        </div>
-        <div className={styles.step}>
-          <div className={styles.stepIcon}>🏆</div>
-          <div className={styles.stepArrow}></div>
-          <div className={styles.stepLabel}>Nyertél!</div>
-        </div>
-      </div>
-
       <div className={styles.sections}>
 
         <div className={styles.section}>
