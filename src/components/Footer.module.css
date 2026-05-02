@@ -1,51 +1,104 @@
 .footer {
   background: var(--dark);
   border-top: 1px solid var(--border-gold);
-  padding: 2rem;
+  padding: 3rem 2rem 2rem;
   margin-top: 4rem;
 }
 
 .inner {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
 }
+
+.top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 0.5px solid rgba(184,150,78,0.15);
+  margin-bottom: 1.5rem;
+}
+
+.brand {}
 
 .logo {
   font-family: var(--font-display);
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 300;
   color: var(--gold-light);
   letter-spacing: 3px;
   text-transform: uppercase;
+  margin-bottom: 6px;
 }
 
-.links {
-  display: flex;
-  gap: 1.5rem;
+.tagline {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+}
+
+.col {}
+
+.colTitle {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
 }
 
 .link {
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+  display: block;
+  font-size: 12px;
+  letter-spacing: 1px;
   color: rgba(255,255,255,0.38);
   text-decoration: none;
+  margin-bottom: 8px;
   transition: color 0.2s;
 }
 
 .link:hover { color: var(--gold-light); }
 
+.stepRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 0.5px solid rgba(255,255,255,0.05);
+  font-size: 12px;
+  color: rgba(255,255,255,0.38);
+}
+
+.stepRow span:last-child {
+  color: var(--gold-light);
+  font-family: var(--font-display);
+  font-size: 14px;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
 .copy {
   font-size: 11px;
   color: rgba(255,255,255,0.22);
   letter-spacing: 0.5px;
-}.by {
+}
+
+.by {
   font-size: 11px;
   color: rgba(255,255,255,0.22);
   letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .top {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
