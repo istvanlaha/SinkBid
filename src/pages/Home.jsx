@@ -91,7 +91,7 @@ export default function Home() {
         </div>
 
         {SHOWCASE_CATEGORIES.map(cat => {
-          const items = getByCategory(cat.id).slice(0, 9)
+          const items = getByCategory(cat.id).slice(0, 8)
           if (items.length === 0) return null
           return (
             <section key={cat.id} className={styles.catSection}>
