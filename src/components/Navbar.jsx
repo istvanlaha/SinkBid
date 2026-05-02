@@ -65,7 +65,7 @@ export default function Navbar() {
           )}
         </div>
 
-        <Link to="/active" className={styles.link}>{t('nav.activeBids')}</Link>
+       <Link to="/" className={styles.link} onClick={() => setTimeout(() => document.getElementById('active-bids')?.scrollIntoView({ behavior: 'smooth' }), 100)}>{t('nav.activeBids')}</Link>
         <Link to="/sold" className={styles.link}>{t('nav.sold')}</Link>
 
         <div className={styles.authLinks}>
