@@ -48,7 +48,7 @@
   font-size: 48px;
   font-weight: 300;
   color: var(--teak-gold);
-  opacity: 0.5;
+  opacity: 0.6;
   line-height: 1;
   flex-shrink: 0;
   width: 72px;
@@ -78,7 +78,7 @@
 .bidStepTable {
   margin-top: 1rem;
   border: 0.5px solid var(--sand-mid);
-  border-radius: var(--radius-sm);
+  border-radius: 10px;
   overflow: hidden;
 }
 
@@ -108,7 +108,7 @@
 .modelBox {
   background: var(--teak);
   padding: 2rem;
-  border-radius: var(--radius-sm);
+  border-radius: 12px;
   border: 1px solid var(--teak-border);
   margin-bottom: 2rem;
 }
@@ -131,8 +131,8 @@
 .modelItem {
   padding: 1rem;
   border: 0.5px solid var(--teak-border);
-  border-radius: var(--radius-sm);
-  background: var(--teak-mid);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.5);
 }
 
 .modelLabel {
@@ -160,7 +160,7 @@
 .example {
   background: var(--white);
   border: 0.5px solid var(--border-light);
-  border-radius: var(--radius-sm);
+  border-radius: 12px;
   overflow: hidden;
 }
 
