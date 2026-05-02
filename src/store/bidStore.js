@@ -148,7 +148,7 @@ export const INITIAL_PRODUCTS = [
   { id: 81, category: 'szamtech', name: 'Sony PlayStation 5 Digital Edition', description: 'Factory sealed, with two DualSense controllers. Latest firmware.', originalPrice: 480, image: 'https://images.unsplash.com/photo-1607853202273-797f1c22a38e?w=600&q=80' },
 
   { id: 82, category: 'sport', name: 'Titleist TSR3 Driver', description: '9 degree loft, Tensei AV Blue shaft, headcover included.', originalPrice: 580, image: 'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=600&q=80' },
-  { id: 83, category: 'sport', name: 'Wilson Pro Staff RF97 Autograph', description: 'Roger Federer signature racket, 97sq in, 340g. Grip size 4.', originalPrice: 320, image: 'https://images.unsplash.com/photo-1617083934551-ac1359a20a40?w=600&q=80' },
+  { Wilson Pro Staff RF97 Autograph
   { id: 84, category: 'sport', name: 'Trek Madone SLR 9 Road Bike', description: 'Carbon frame, Shimano Dura-Ace Di2, size 56. Race ready.', originalPrice: 12000, image: 'https://images.unsplash.com/photo-1571333250630-f0230c320b6d?w=600&q=80' },
   { id: 85, category: 'sport', name: 'Rossignol Hero Elite ST TI Skis', description: '170cm, Tyrolia bindings included, one season used.', originalPrice: 850, image: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=600&q=80' },
   { id: 86, category: 'sport', name: 'Peloton Bike Plus', description: 'HD touchscreen, auto-resistance, weights included. Barely used.', originalPrice: 2200, image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80' },
