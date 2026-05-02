@@ -152,4 +152,43 @@
   .main { padding: 1.5rem 1rem; }
   .grid { grid-template-columns: 1fr; }
   .how { padding: 1.5rem; }
+}.bidStepBox {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border: 0.5px solid rgba(184,150,78,0.2);
+  border-radius: var(--radius-sm);
+}
+
+.bidStepTitle {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 1rem;
+}
+
+.bidStepGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.5rem;
+}
+
+.bidStepItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.04);
+  border-radius: var(--radius-sm);
+}
+
+.bidStepRange {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+}
+
+.bidStepVal {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--gold-light);
 }
