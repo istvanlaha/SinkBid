@@ -45,7 +45,7 @@
 
 .stepN {
   font-family: var(--font-display);
-  font-size: 48px;
+  font-size: 72px;
   font-weight: 300;
   color: var(--teak-gold);
   opacity: 0.6;
@@ -54,12 +54,11 @@
   width: 72px;
   text-align: right;
 }
-
 .stepContent { flex: 1; padding-top: 6px; }
 
 .stepTitle {
   font-family: var(--font-display);
-  font-size: 33px;
+  font-size: 32px;
   font-weight: 400;
   color: var(--dark);
   margin-bottom: 10px;
