@@ -21,12 +21,17 @@ export const SUBCATEGORIES = {
 }
 
 export function getBidStep(price) {
-  if (price <= 1000) return 10
-  if (price <= 10000) return 20
-  if (price <= 100000) return 50
-  if (price <= 1000000) return 100
-  if (price <= 2000000) return 200
-  return 500
+  if (price <= 1000) return 5
+  if (price <= 10000) return 10
+  if (price <= 20000) return 20
+  if (price <= 30000) return 30
+  if (price <= 40000) return 40
+  if (price <= 50000) return 50
+  if (price <= 60000) return 60
+  if (price <= 70000) return 70
+  if (price <= 80000) return 80
+  if (price <= 90000) return 90
+  return 100
 }
 
 export function getEntryFee(price) {
