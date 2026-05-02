@@ -8,8 +8,9 @@ import styles from './Navbar.module.css'
 const LANGS = [
   { code: 'hu', label: 'HU', dir: 'ltr' },
   { code: 'en', label: 'EN', dir: 'ltr' },
-  { code: 'ru', label: 'RU', dir: 'ltr' },
-  { code: 'ar', label: 'AR', dir: 'rtl' },
+  { code: 'de', label: 'DE', dir: 'ltr' },
+  { code: 'zh', label: 'ZH', dir: 'ltr' },
+]
 ]
 
 export default function Navbar() {
