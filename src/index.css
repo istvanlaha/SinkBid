@@ -30,6 +30,13 @@
   --sand-mid: #EDE5D5;
   --sand-dark: #8A7A5A;
   --sand-text: #5A4A2A;
+  --teak: #4A3F2A;
+  --teak-mid: rgba(212,178,120,0.1);
+  --teak-border: rgba(212,178,120,0.2);
+  --teak-gold: #D4B278;
+  --teak-light: #F5EDD8;
+  --teak-muted: rgba(245,237,216,0.6);
+}
 }
 
 html {
