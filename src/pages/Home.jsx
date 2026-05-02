@@ -65,8 +65,6 @@ export default function Home() {
         </div>
       </section>
 
-      <CategoryNav />
-
       <main className={styles.main}>
 
         <div className={styles.currencyBar}>
