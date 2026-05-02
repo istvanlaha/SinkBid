@@ -63,10 +63,21 @@
   box-shadow: 0 16px 48px rgba(0,0,0,0.4);
 }
 
-.dropdownGrid {
+.dropdownCols {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.25rem;
+  gap: 0;
+}
+
+.dropdownCol {
+  display: flex;
+  flex-direction: column;
+  border-right: 0.5px solid rgba(184,150,78,0.15);
+  padding: 0 0.5rem;
+}
+
+.dropdownCol:last-child {
+  border-right: none;
 }
 
 .dropdownItem {
