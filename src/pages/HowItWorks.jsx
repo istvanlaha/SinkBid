@@ -29,7 +29,7 @@ export default function HowItWorks() {
           <div className={styles.step}>
             <div className={styles.stepN}>02</div>
             <div className={styles.stepContent}>
-              <div className={styles.stepTitle}>Fizess betekintési díjat</div>
+              <div className={styles.stepTitle}>Fizess betekintési díjat — Ezzel már csökkentve az árat</div>
               <div className={styles.stepDesc}>
                 A betekintési díj befizetésével belépsz a licitbe és élőben látod az aktuális árat.
                 <strong> Ez az összeg beleszámít a végső vételárba.</strong>
