@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-
+ 
 export const SUBCATEGORIES = {
   orak: ['All Watches', "Men's Watches", "Ladies' Watches", 'Antique Watches', 'Pocket Watches', 'Sports Watches', 'Luxury Watches'],
   ekszer: ['All Jewellery', 'Rings', 'Necklaces', 'Bracelets', 'Earrings', 'Brooches', 'Antique Jewellery'],
@@ -19,7 +19,7 @@ export const SUBCATEGORIES = {
   szepseg: ['All Beauty', 'Skincare', 'Perfume', 'Vintage Cosmetics', 'Grooming', 'Spa Equipment', 'Vintage Perfume'],
   ingatlan: ['All Properties', 'Spain Apartment', 'Spain Villa', 'Spain Penthouse', 'Italy Apartment', 'Italy Villa', 'Italy Farmhouse', 'France Apartment', 'France Chateau', 'Hungary Apartment', 'Hungary House', 'Portugal Villa', 'Greece Villa', 'Croatia Villa', 'UAE Penthouse', 'USA House', 'Switzerland Chalet', 'UK Country Estate'],
 }
-
+ 
 export function getBidStep(price) {
   if (price <= 1000) return 10
   if (price <= 10000) return 20
@@ -28,13 +28,13 @@ export function getBidStep(price) {
   if (price <= 2000000) return 200
   return 500
 }
-
+ 
 export function getEntryFee(price) {
   return getBidStep(price)
 }
-
+ 
 export const EUR_TO_USD = 1.08
-
+ 
 export const CATEGORIES = [
   { id: 'all', key: 'all' },
   { id: 'orak', key: 'orak' },
@@ -55,7 +55,7 @@ export const CATEGORIES = [
   { id: 'szepseg', key: 'szepseg' },
   { id: 'ingatlan', key: 'ingatlan' },
 ]
-
+ 
 export const INITIAL_PRODUCTS = [
   { id: 1, category: 'orak', name: 'Omega Seamaster Diver 300m 42mm', description: 'Steel bracelet, blue dial, automatic movement. 2023 production, original box.', originalPrice: 5600, image: 'https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=600&q=80' },
   { id: 2, category: 'orak', name: 'Rolex Datejust 36mm White Gold', description: 'White gold, diamond bezel, jubilee bracelet. Full set with papers.', originalPrice: 18500, image: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=600&q=80' },
@@ -177,12 +177,12 @@ export const INITIAL_PRODUCTS = [
   { id: 118, category: 'konyvek', name: 'First Edition Harry Potter Philosophers Stone', description: 'J.K. Rowling, Bloomsbury 1997, first print. Fine condition.', originalPrice: 45000, image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&q=80' },
   { id: 119, category: 'konyvek', name: 'Signed Hemingway Old Man and the Sea', description: 'First edition 1952, signed presentation copy. Near fine.', originalPrice: 28000, image: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=600&q=80' },
   { id: 120, category: 'konyvek', name: 'Audubon Birds of America Folio', description: 'Double elephant folio reprint, 435 plates. Limited edition 250.', originalPrice: 8500, image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&q=80' },
-  { id: 121, category: 'konyvek', name: 'Gutenberg Bible Leaf circa 1455', description: 'Single leaf from original Gutenberg Bible. COA from Christie auction house.', originalPrice: 65000, image: 'https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=600&q=80' },
+  { id: 121, category: 'konyvek', name: 'Gutenberg Bible Leaf circa 1455', description: 'Single leaf from original Gutenberg Bible. COA from major auction house.', originalPrice: 65000, image: 'https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=600&q=80' },
   { id: 122, category: 'konyvek', name: 'Complete Works Shakespeare Folio 1623', description: 'Facsimile of First Folio, limited edition 500. Scholar edition.', originalPrice: 4800, image: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=600&q=80' },
   { id: 123, category: 'konyvek', name: 'First Edition James Bond Casino Royale', description: 'Ian Fleming 1953, original dust jacket. Near fine condition. COA included.', originalPrice: 38000, image: 'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=600&q=80' },
   { id: 124, category: 'konyvek', name: 'Antique World Atlas Mercator 1623', description: 'Original copper engraved maps, hand colored. Full provenance.', originalPrice: 32000, image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?w=600&q=80' },
   { id: 125, category: 'konyvek', name: 'Darwin On the Origin of Species 1859', description: 'First edition, first issue. Rebound in period style. VG condition.', originalPrice: 185000, image: 'https://images.unsplash.com/photo-1526243741027-444d633d7365?w=600&q=80' },
-  { id: 126, category: 'konyvek', name: 'Signed Tolkien Lord of the Rings Set', description: 'First edition three volume set, signed by Tolkien. Very Good.', originalPrice: 95000, image: 'https://images.unsplash.com/photo-1535905557558-afc4877a26fc?w=600&q=80' },
+  { id: 126, category: 'konyvek', name: 'Signed Tolkien Lord of the Rings Set', description: 'First edition three volume set, signed by Tolkien. Very Good condition.', originalPrice: 95000, image: 'https://images.unsplash.com/photo-1535905557558-afc4877a26fc?w=600&q=80' },
   { id: 127, category: 'ipari', name: 'Leica M6 Film Camera Black', description: 'Classic rangefinder, 0.72 viewfinder, with 50mm Summicron. Serviced.', originalPrice: 4800, image: 'https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?w=600&q=80' },
   { id: 128, category: 'ipari', name: 'Vintage Microscope Zeiss 1920s', description: 'Brass and steel, all original optics, working condition. Museum quality.', originalPrice: 2200, image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&q=80' },
   { id: 129, category: 'ipari', name: 'Stanley No 45 Combination Plane', description: 'Complete set, all 23 cutters, original box. Excellent condition.', originalPrice: 850, image: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&q=80' },
@@ -211,13 +211,13 @@ export const INITIAL_PRODUCTS = [
   { id: 152, category: 'ingatlan', name: 'Dubai Marina Penthouse', description: 'UAE, 450sqm, 5 bed, private pool, marina view. Fully furnished.', originalPrice: 3200000, image: 'https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=600&q=80' },
   { id: 153, category: 'ingatlan', name: 'Swiss Alps Chalet Verbier', description: 'Switzerland, 320sqm, 5 bed, ski in ski out, mountain views.', originalPrice: 4800000, image: 'https://images.unsplash.com/photo-1518608774734-f7c4f33a4e9f?w=600&q=80' },
 ]
-
+ 
 function computeCurrentPrice(product, biddersCount) {
   const step = getBidStep(product.originalPrice)
   const drop = biddersCount * step
   return Math.max(0, product.originalPrice - drop)
 }
-
+ 
 const initialBidStates = {}
 INITIAL_PRODUCTS.forEach(p => {
   const biddersCount = Math.floor(Math.random() * 15) + 2
@@ -231,17 +231,114 @@ INITIAL_PRODUCTS.forEach(p => {
     soldPrice: null,
   }
 })
-
+ 
 export const useBidStore = create((set, get) => ({
   products: INITIAL_PRODUCTS,
   bidStates: initialBidStates,
   activeCategory: 'all',
   lang: 'hu',
   currency: 'EUR',
-
+ 
   setCategory: (cat) => set({ activeCategory: cat }),
   setLang: (lang) => set({ lang }),
   setCurrency: (currency) => set({ currency }),
-
+ 
   joinBid: (productId) => {
-    const state = get().bidStates[productI
+    const state = get().bidStates[productId]
+    if (state.joined) return
+    const product = get().products.find(p => p.id === productId)
+    const step = getBidStep(product.originalPrice)
+    set(s => ({
+      bidStates: {
+        ...s.bidStates,
+        [productId]: {
+          ...s.bidStates[productId],
+          joined: true,
+          biddersCount: s.bidStates[productId].biddersCount + 1,
+          currentPrice: Math.max(0, s.bidStates[productId].currentPrice - step),
+        }
+      }
+    }))
+  },
+ 
+  externalBid: (productId) => {
+    const state = get().bidStates[productId]
+    if (state.sold) return
+    const product = get().products.find(p => p.id === productId)
+    const step = getBidStep(product.originalPrice)
+    set(s => ({
+      bidStates: {
+        ...s.bidStates,
+        [productId]: {
+          ...s.bidStates[productId],
+          biddersCount: s.bidStates[productId].biddersCount + 1,
+          currentPrice: Math.max(0, s.bidStates[productId].currentPrice - step),
+        }
+      }
+    }))
+  },
+ 
+  startBuy: (productId) => {
+    set(s => ({
+      bidStates: {
+        ...s.bidStates,
+        [productId]: { ...s.bidStates[productId], buying: true, timerSeconds: 300 }
+      }
+    }))
+  },
+ 
+  cancelBuy: (productId) => {
+    set(s => ({
+      bidStates: {
+        ...s.bidStates,
+        [productId]: { ...s.bidStates[productId], buying: false, timerSeconds: 300 }
+      }
+    }))
+  },
+ 
+  tickTimer: (productId) => {
+    const state = get().bidStates[productId]
+    if (!state.buying) return
+    const newVal = state.timerSeconds - 1
+    if (newVal <= 0) {
+      set(s => ({
+        bidStates: {
+          ...s.bidStates,
+          [productId]: { ...s.bidStates[productId], buying: false, timerSeconds: 300 }
+        }
+      }))
+    } else {
+      set(s => ({
+        bidStates: {
+          ...s.bidStates,
+          [productId]: { ...s.bidStates[productId], timerSeconds: newVal }
+        }
+      }))
+    }
+  },
+ 
+  completePurchase: (productId) => {
+    const state = get().bidStates[productId]
+    set(s => ({
+      bidStates: {
+        ...s.bidStates,
+        [productId]: {
+          ...s.bidStates[productId],
+          sold: true,
+          buying: false,
+          soldPrice: state.currentPrice,
+        }
+      }
+    }))
+  },
+ 
+  getFiltered: () => {
+    const { products, activeCategory } = get()
+    if (activeCategory === 'all') return products
+    return products.filter(p => p.category === activeCategory)
+  },
+ 
+  getByCategory: (catId) => {
+    return get().products.filter(p => p.category === catId)
+  },
+}))
