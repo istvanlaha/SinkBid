@@ -13,6 +13,16 @@ const SHOWCASE_CATEGORIES = [
   { id: 'muveszet', label: 'Art' },
   { id: 'butor', label: 'Furniture' },
   { id: 'mobil', label: 'Mobile Phones' },
+  { id: 'muszaki', label: 'Electronics' },
+  { id: 'szamtech', label: 'Computing' },
+  { id: 'sport', label: 'Sport' },
+  { id: 'otthon', label: 'Home' },
+  { id: 'gyujtheto', label: 'Collectibles' },
+  { id: 'jatekok', label: 'Games' },
+  { id: 'konyvek', label: 'Books' },
+  { id: 'ipari', label: 'Industrial' },
+  { id: 'szepseg', label: 'Beauty' },
+  { id: 'ingatlan', label: 'Real Estate' },
 ]
 
 function formatPrice(price, currency) {
