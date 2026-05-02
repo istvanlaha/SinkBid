@@ -17,7 +17,7 @@
 
 .headerTitle {
   font-family: var(--font-display);
-  font-size: 44px;
+  font-size: 88px;
   font-weight: 300;
   color: var(--teak-light);
 }
@@ -59,7 +59,7 @@
 
 .stepTitle {
   font-family: var(--font-display);
-  font-size: 22px;
+  font-size: 33px;
   font-weight: 400;
   color: var(--dark);
   margin-bottom: 10px;
@@ -88,7 +88,7 @@
   align-items: center;
   padding: 10px 16px;
   border-bottom: 0.5px solid var(--sand-mid);
-  font-size: 13px;
+  font-size: 20px;
   color: var(--sand-text);
   background: var(--white);
 }
@@ -99,7 +99,7 @@
 
 .bidStepVal {
   font-family: var(--font-display);
-  font-size: 16px;
+  font-size: 24px;
   font-weight: 400;
   color: var(--sand-dark);
   letter-spacing: 0.5px;
@@ -115,7 +115,7 @@
 
 .modelTitle {
   font-family: var(--font-display);
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 300;
   color: var(--teak-light);
   margin-bottom: 1.5rem;
@@ -145,7 +145,7 @@
 
 .modelVal {
   font-family: var(--font-display);
-  font-size: 24px;
+  font-size: 36px;
   font-weight: 300;
   color: var(--teak-gold);
   margin-bottom: 4px;
@@ -182,7 +182,7 @@
   align-items: center;
   padding: 0.875rem 0;
   border-bottom: 0.5px solid var(--border-light);
-  font-size: 14px;
+  font-size: 21px;
   color: var(--dark);
 }
 
