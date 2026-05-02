@@ -75,7 +75,7 @@ export default function Home() {
         </div>
       </section>
 
-      <main className={styles.main}>
+     <main className={styles.main} id="active-bids">
 
         <div className={styles.currencyBar}>
           <span className={styles.currencyLabel}>Currency:</span>
