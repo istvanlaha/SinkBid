@@ -200,4 +200,20 @@
 .exRowTotal span:last-child {
   color: var(--gold);
   font-weight: 500;
+}.bidStepTable {
+  background: var(--sand);
+  border: 0.5px solid var(--sand-mid);
+}
+
+.bidStepRow {
+  border-bottom-color: var(--sand-mid);
+  color: var(--sand-text);
+}
+
+.bidStepRow:nth-child(odd) {
+  background: var(--sand-mid);
+}
+
+.bidStepVal {
+  color: var(--sand-dark);
 }
