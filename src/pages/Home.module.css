@@ -1,14 +1,14 @@
 .hero {
-  background: var(--dark);
+  background: var(--teak);
   padding: 3.5rem 2rem 2.5rem;
   text-align: center;
-  border-bottom: 1px solid var(--border-gold);
+  border-bottom: 1px solid var(--teak-border);
 }
 
 .heroTag {
   font-size: 10px;
   letter-spacing: 4px;
-  color: var(--gold);
+  color: var(--teak-gold);
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
@@ -17,18 +17,18 @@
   font-family: var(--font-display);
   font-size: 56px;
   font-weight: 300;
-  color: var(--white);
+  color: var(--teak-light);
   line-height: 1.1;
   margin-bottom: 1rem;
 }
 
 .heroTitle em {
-  color: var(--gold-light);
+  color: var(--teak-gold);
   font-style: italic;
 }
 
 .heroSub {
-  color: rgba(255,255,255,0.42);
+  color: var(--teak-muted);
   font-size: 14px;
   line-height: 1.65;
   max-width: 460px;
@@ -41,7 +41,7 @@
   justify-content: center;
   gap: 4rem;
   padding-top: 1.75rem;
-  border-top: 1px solid rgba(184,150,78,0.15);
+  border-top: 1px solid var(--teak-border);
 }
 
 .heroStat { text-align: center; }
@@ -50,13 +50,13 @@
   font-family: var(--font-display);
   font-size: 32px;
   font-weight: 300;
-  color: var(--gold-light);
+  color: var(--teak-gold);
 }
 
 .heroStatL {
   font-size: 10px;
   letter-spacing: 2px;
-  color: rgba(255,255,255,0.3);
+  color: var(--teak-muted);
   text-transform: uppercase;
   margin-top: 3px;
 }
@@ -96,17 +96,17 @@
 }
 
 .how {
-  background: var(--dark);
+  background: var(--teak);
   padding: 2.5rem;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--border-gold);
+  border: 1px solid var(--teak-border);
 }
 
 .howTitle {
   font-family: var(--font-display);
   font-size: 26px;
   font-weight: 300;
-  color: var(--white);
+  color: var(--teak-light);
   margin-bottom: 1.75rem;
   letter-spacing: 1px;
 }
@@ -119,15 +119,15 @@
 
 .howStep {
   padding: 1.25rem;
-  border: 0.5px solid rgba(184,150,78,0.2);
+  border: 0.5px solid var(--teak-border);
   border-radius: var(--radius-sm);
 }
 
 .howN {
   font-family: var(--font-display);
   font-size: 36px;
-  color: var(--gold);
-  opacity: 0.35;
+  color: var(--teak-gold);
+  opacity: 0.5;
   line-height: 1;
   margin-bottom: 0.75rem;
 }
@@ -135,27 +135,21 @@
 .howStepTitle {
   font-size: 13px;
   font-weight: 500;
-  color: var(--white);
+  color: var(--teak-light);
   letter-spacing: 0.5px;
   margin-bottom: 6px;
 }
 
 .howStepDesc {
   font-size: 12px;
-  color: rgba(255,255,255,0.38);
+  color: var(--teak-muted);
   line-height: 1.65;
 }
 
-@media (max-width: 768px) {
-  .heroTitle { font-size: 36px; }
-  .heroStats { gap: 2rem; }
-  .main { padding: 1.5rem 1rem; }
-  .grid { grid-template-columns: 1fr; }
-  .how { padding: 1.5rem; }
-}.bidStepBox {
+.bidStepBox {
   margin-top: 1.5rem;
   padding: 1.5rem;
-  border: 0.5px solid rgba(184,150,78,0.2);
+  border: 0.5px solid var(--teak-border);
   border-radius: var(--radius-sm);
 }
 
@@ -163,7 +157,7 @@
   font-size: 11px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.45);
+  color: var(--teak-muted);
   margin-bottom: 1rem;
 }
 
@@ -178,17 +172,25 @@
   justify-content: space-between;
   align-items: center;
   padding: 8px 12px;
-  background: rgba(255,255,255,0.04);
+  background: var(--teak-mid);
   border-radius: var(--radius-sm);
 }
 
 .bidStepRange {
   font-size: 12px;
-  color: rgba(255,255,255,0.45);
+  color: var(--teak-muted);
 }
 
 .bidStepVal {
   font-family: var(--font-display);
   font-size: 16px;
-  color: var(--gold-light);
+  color: var(--teak-gold);
+}
+
+@media (max-width: 768px) {
+  .heroTitle { font-size: 36px; }
+  .heroStats { gap: 2rem; }
+  .main { padding: 1.5rem 1rem; }
+  .grid { grid-template-columns: 1fr; }
+  .how { padding: 1.5rem; }
 }
