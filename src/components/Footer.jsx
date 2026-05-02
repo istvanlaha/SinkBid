@@ -62,14 +62,19 @@ export default function Footer() {
 
       <div className={styles.bidStepBar}>
         <div className={styles.bidStepTitle}>Entry fee & Bid step</div>
-        <div className={styles.bidStepRow}>
-          <span>€100–1,000 <strong>€10</strong></span>
-          <span>€1,001–10,000 <strong>€20</strong></span>
-          <span>€10,001–100,000 <strong>€50</strong></span>
-          <span>€100,001–1M <strong>€100</strong></span>
-          <span>€1M–2M <strong>€200</strong></span>
-          <span>€2M+ <strong>€500</strong></span>
-        </div>
+       <div className={styles.bidStepRow}>
+  <span>€100–1.000 <strong>€5</strong></span>
+  <span>€1.001–10.000 <strong>€10</strong></span>
+  <span>€10.001–20.000 <strong>€20</strong></span>
+  <span>€20.001–30.000 <strong>€30</strong></span>
+  <span>€30.001–40.000 <strong>€40</strong></span>
+  <span>€40.001–50.000 <strong>€50</strong></span>
+  <span>€50.001–60.000 <strong>€60</strong></span>
+  <span>€60.001–70.000 <strong>€70</strong></span>
+  <span>€70.001–80.000 <strong>€80</strong></span>
+  <span>€80.001–90.000 <strong>€90</strong></span>
+  <span>€90.001–100.000+ <strong>€100</strong></span>
+</div>
       </div>
 
       <div className={styles.bottom}>
