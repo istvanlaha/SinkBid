@@ -94,8 +94,12 @@ export default function Home() {
                   const savings = Math.round((1 - state.currentPrice / product.originalPrice) * 100)
                   return (
                     <div key={product.id} className={styles.miniCard}>
-                      <div className={styles.miniCardImg}>
-                        <div className={styles.miniCardEmoji}>{product.emoji}</div>
+                    <div className={styles.miniCardImg}>
+  {product.image ? (
+    <img src={product.image} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+  ) : (
+    <div className={styles.miniCardEmoji}>{product.emoji}</div>
+  )}
                         <div className={styles.miniLiveBadge}>
                           <span className={styles.miniLiveDot} />
                           Live
