@@ -17,9 +17,10 @@ function formatTime(seconds) {
 
 export default function ProductDetail() {
   const { productId } = useParams()
-  const { t, i18n } = useTranslation()
+  const { i18n } = useTranslation()
   const navigate = useNavigate()
   const { products, bidStates, joinBid, startBuy, cancelBuy, tickTimer, completePurchase, currency } = useBidStore()
+  const { t } = useTranslation()
   const [activeImg, setActiveImg] = useState(0)
   const timerRef = useRef(null)
 
@@ -53,6 +54,7 @@ export default function ProductDetail() {
   const savings = Math.round((1 - state.currentPrice / product.originalPrice) * 100)
   const images = [product.image, product.image, product.image, product.image].filter(Boolean)
   const isUrgent = state.timerSeconds <= 60 && state.buying
+  const lang = i18n.language || 'hu'
 
   const TERMS_URL = {
     hu: '#vasarlasi-feltetelek',
@@ -60,8 +62,6 @@ export default function ProductDetail() {
     de: '#kaufbedingungen',
     zh: '#购买条款',
   }
-
-  const lang = i18n.language || 'hu'
 
   const LABELS = {
     hu: {
@@ -82,20 +82,10 @@ export default function ProductDetail() {
       details: 'Részletek',
       moreDetails: 'További részletek',
       terms: 'Vásárlási feltételek',
-      condition: 'Állapot',
-      conditionVal: 'Kiváló',
-      provenance: 'Proveniencia',
-      provenanceVal: 'Magángyűjtemény',
-      shipping: 'Szállítás',
-      shippingVal: 'Biztosított szállítás, 5-7 munkanap',
       payment: 'Fizetési módok',
-      paymentVal: 'Bankkártya, banki átutalás',
-      guarantee: 'Garancia',
-      guaranteeVal: 'Hitelesség garancia, visszaváltási jog 14 napon belül',
-      commission: 'Jutalék',
-      commissionVal: 'Az eladási ár 12%-a',
-      reserve: 'Fenntartott ár',
-      reserveVal: 'Nincs fenntartott ár',
+      paymentVal: 'Bankkártya',
+      detailsDesc: 'Részletes leírás a termékről...',
+      moreDetailsDesc: 'További információk...',
       back: '← Vissza',
     },
     en: {
@@ -116,20 +106,10 @@ export default function ProductDetail() {
       details: 'Details',
       moreDetails: 'Further details',
       terms: 'Terms of purchase',
-      condition: 'Condition',
-      conditionVal: 'Excellent',
-      provenance: 'Provenance',
-      provenanceVal: 'Private collection',
-      shipping: 'Shipping',
-      shippingVal: 'Insured shipping, 5-7 business days',
       payment: 'Payment methods',
-      paymentVal: 'Credit card, bank transfer',
-      guarantee: 'Guarantee',
-      guaranteeVal: 'Authenticity guarantee, 14-day return policy',
-      commission: 'Commission',
-      commissionVal: '12% of sale price',
-      reserve: 'Reserve price',
-      reserveVal: 'No reserve price',
+      paymentVal: 'Credit card',
+      detailsDesc: 'Detailed product description...',
+      moreDetailsDesc: 'Additional information...',
       back: '← Back',
     },
     de: {
@@ -145,25 +125,15 @@ export default function ProductDetail() {
       buying: 'Kauf läuft',
       payNow: 'Jetzt bezahlen',
       cancel: 'Abbrechen',
-      timerNote: 'Die Auktion schliesst nicht bis zur Zahlung. Wenn nicht innerhalb von 5 Minuten bezahlt, läuft die Auktion weiter.',
+      timerNote: 'Die Auktion schliesst nicht bis zur Zahlung.',
       sold: 'Verkauft!',
       details: 'Details',
       moreDetails: 'Weitere Details',
       terms: 'Kaufbedingungen',
-      condition: 'Zustand',
-      conditionVal: 'Ausgezeichnet',
-      provenance: 'Provenienz',
-      provenanceVal: 'Privatsammlung',
-      shipping: 'Versand',
-      shippingVal: 'Versicherter Versand, 5-7 Werktage',
       payment: 'Zahlungsmethoden',
-      paymentVal: 'Kreditkarte, Banküberweisung',
-      guarantee: 'Garantie',
-      guaranteeVal: 'Echtheitszertifikat, 14 Tage Rückgaberecht',
-      commission: 'Provision',
-      commissionVal: '12% des Verkaufspreises',
-      reserve: 'Mindestgebot',
-      reserveVal: 'Kein Mindestgebot',
+      paymentVal: 'Kreditkarte',
+      detailsDesc: 'Detaillierte Produktbeschreibung...',
+      moreDetailsDesc: 'Weitere Informationen...',
       back: '← Zurück',
     },
     zh: {
@@ -184,20 +154,10 @@ export default function ProductDetail() {
       details: '详情',
       moreDetails: '更多详情',
       terms: '购买条款',
-      condition: '状态',
-      conditionVal: '优秀',
-      provenance: '来源',
-      provenanceVal: '私人收藏',
-      shipping: '运输',
-      shippingVal: '保险运输，5-7个工作日',
       payment: '付款方式',
-      paymentVal: '信用卡，银行转账',
-      guarantee: '保证',
-      guaranteeVal: '真实性保证，14天退货政策',
-      commission: '佣金',
-      commissionVal: '售价的12%',
-      reserve: '底价',
-      reserveVal: '无底价',
+      paymentVal: '信用卡',
+      detailsDesc: '详细产品描述...',
+      moreDetailsDesc: '更多信息...',
       back: '← 返回',
     },
   }
@@ -308,41 +268,19 @@ export default function ProductDetail() {
 
           <div className={styles.detailsSection}>
             <div className={styles.detailsTitle}>{L.details}</div>
-            <div className={styles.detailsGrid}>
-              <div className={styles.detailItem}>
-                <span className={styles.detailLabel}>{L.condition}</span>
-                <span className={styles.detailVal}>{L.conditionVal}</span>
-              </div>
-              <div className={styles.detailItem}>
-                <span className={styles.detailLabel}>{L.provenance}</span>
-                <span className={styles.detailVal}>{L.provenanceVal}</span>
-              </div>
-              <div className={styles.detailItem}>
-                <span className={styles.detailLabel}>{L.shipping}</span>
-                <span className={styles.detailVal}>{L.shippingVal}</span>
-              </div>
-              <div className={styles.detailItem}>
-                <span className={styles.detailLabel}>{L.payment}</span>
-                <span className={styles.detailVal}>{L.paymentVal}</span>
-              </div>
+            <div className={styles.detailItem}>
+              <span className={styles.detailLabel}>{L.payment}</span>
+              <span className={styles.detailVal}>{L.paymentVal}</span>
+            </div>
+            <div className={styles.detailsTextBox}>
+              <p className={styles.detailsPlaceholder}>{product.details || L.detailsDesc}</p>
             </div>
           </div>
 
           <div className={styles.detailsSection}>
             <div className={styles.detailsTitle}>{L.moreDetails}</div>
-            <div className={styles.detailsGrid}>
-              <div className={styles.detailItem}>
-                <span className={styles.detailLabel}>{L.guarantee}</span>
-                <span className={styles.detailVal}>{L.guaranteeVal}</span>
-              </div>
-              <div className={styles.detailItem}>
-                <span className={styles.detailLabel}>{L.commission}</span>
-                <span className={styles.detailVal}>{L.commissionVal}</span>
-              </div>
-              <div className={styles.detailItem}>
-                <span className={styles.detailLabel}>{L.reserve}</span>
-                <span className={styles.detailVal}>{L.reserveVal}</span>
-              </div>
+            <div className={styles.detailsTextBox}>
+              <p className={styles.detailsPlaceholder}>{product.moreDetails || L.moreDetailsDesc}</p>
             </div>
           </div>
 
