@@ -19,6 +19,7 @@ export default function App() {
           <Route path="/sold" element={<Sold />} />
           <Route path="/how" element={<HowItWorks />} />
           <Route path="/category/:catId" element={<Category />} />
+          <Route path="/product/:productId" element={<ProductDetail />} />
         </Routes>
       </div>
       <Footer />
