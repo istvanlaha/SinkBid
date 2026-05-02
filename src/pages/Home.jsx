@@ -178,14 +178,19 @@ export default function Home() {
           </div>
           <div className={styles.bidStepBox}>
             <div className={styles.bidStepTitle}>Entry fee & bid step</div>
-            <div className={styles.bidStepGrid}>
-              <div className={styles.bidStepItem}><span className={styles.bidStepRange}>100 — 1.000 EUR</span><span className={styles.bidStepVal}>10 EUR</span></div>
-              <div className={styles.bidStepItem}><span className={styles.bidStepRange}>1.001 — 10.000 EUR</span><span className={styles.bidStepVal}>20 EUR</span></div>
-              <div className={styles.bidStepItem}><span className={styles.bidStepRange}>10.001 — 100.000 EUR</span><span className={styles.bidStepVal}>50 EUR</span></div>
-              <div className={styles.bidStepItem}><span className={styles.bidStepRange}>100.001 — 1.000.000 EUR</span><span className={styles.bidStepVal}>100 EUR</span></div>
-              <div className={styles.bidStepItem}><span className={styles.bidStepRange}>1.000.001 — 2.000.000 EUR</span><span className={styles.bidStepVal}>200 EUR</span></div>
-              <div className={styles.bidStepItem}><span className={styles.bidStepRange}>2.000.001 EUR+</span><span className={styles.bidStepVal}>500 EUR</span></div>
-            </div>
+           <div className={styles.bidStepGrid}>
+  <div className={styles.bidStepItem}><span className={styles.bidStepRange}>100 — 1.000 EUR</span><span className={styles.bidStepVal}>5 EUR</span></div>
+  <div className={styles.bidStepItem}><span className={styles.bidStepRange}>1.001 — 10.000 EUR</span><span className={styles.bidStepVal}>10 EUR</span></div>
+  <div className={styles.bidStepItem}><span className={styles.bidStepRange}>10.001 — 20.000 EUR</span><span className={styles.bidStepVal}>20 EUR</span></div>
+  <div className={styles.bidStepItem}><span className={styles.bidStepRange}>20.001 — 30.000 EUR</span><span className={styles.bidStepVal}>30 EUR</span></div>
+  <div className={styles.bidStepItem}><span className={styles.bidStepRange}>30.001 — 40.000 EUR</span><span className={styles.bidStepVal}>40 EUR</span></div>
+  <div className={styles.bidStepItem}><span className={styles.bidStepRange}>40.001 — 50.000 EUR</span><span className={styles.bidStepVal}>50 EUR</span></div>
+  <div className={styles.bidStepItem}><span className={styles.bidStepRange}>50.001 — 60.000 EUR</span><span className={styles.bidStepVal}>60 EUR</span></div>
+  <div className={styles.bidStepItem}><span className={styles.bidStepRange}>60.001 — 70.000 EUR</span><span className={styles.bidStepVal}>70 EUR</span></div>
+  <div className={styles.bidStepItem}><span className={styles.bidStepRange}>70.001 — 80.000 EUR</span><span className={styles.bidStepVal}>80 EUR</span></div>
+  <div className={styles.bidStepItem}><span className={styles.bidStepRange}>80.001 — 90.000 EUR</span><span className={styles.bidStepVal}>90 EUR</span></div>
+  <div className={styles.bidStepItem}><span className={styles.bidStepRange}>90.001 — 100.000 EUR+</span><span className={styles.bidStepVal}>100 EUR</span></div>
+</div>
           </div>
         </section>
 
