@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useBidStore, CATEGORIES } from '../store/bidStore'
 import i18n from '../i18n/i18n'
@@ -11,10 +11,12 @@ const LANGS = [
   { code: 'de', label: 'DE', dir: 'ltr' },
   { code: 'zh', label: 'ZH', dir: 'ltr' },
 ];
+
 export default function Navbar() {
   const { t } = useTranslation()
   const { lang, setLang } = useBidStore()
   const [catOpen, setCatOpen] = useState(false)
+  const navigate = useNavigate()
 
   const handleLang = (e) => {
     const selected = e.target.value
@@ -47,14 +49,16 @@ export default function Navbar() {
             <div className={styles.dropdownMenu}>
               <div className={styles.dropdownGrid}>
                 {sortedCats.map(cat => (
-                  <Link
+                  <div
                     key={cat.id}
-                    to={`/category/${cat.id}`}
                     className={styles.dropdownItem}
-                    onClick={() => setCatOpen(false)}
+                    onClick={() => {
+                      navigate(`/category/${cat.id}`)
+                      setCatOpen(false)
+                    }}
                   >
                     {t(`categories.${cat.key}`)}
-                  </Link>
+                  </div>
                 ))}
               </div>
             </div>
