@@ -63,7 +63,7 @@ export default function Home() {
           ))}
         </div>
 
-        <section className={styles.how}>
+       <section className={styles.how}>
           <h2 className={styles.howTitle}>{t('how.title')}</h2>
           <div className={styles.howSteps}>
             {[1, 2, 3, 4].map(n => (
@@ -73,6 +73,35 @@ export default function Home() {
                 <div className={styles.howStepDesc}>{t(`how.s${n}d`)}</div>
               </div>
             ))}
+          </div>
+          <div className={styles.bidStepBox}>
+            <div className={styles.bidStepTitle}>Betekintési díj és licit lépcső</div>
+            <div className={styles.bidStepGrid}>
+              <div className={styles.bidStepItem}>
+                <span className={styles.bidStepRange}>100 — 1.000 EUR</span>
+                <span className={styles.bidStepVal}>10 EUR</span>
+              </div>
+              <div className={styles.bidStepItem}>
+                <span className={styles.bidStepRange}>1.001 — 10.000 EUR</span>
+                <span className={styles.bidStepVal}>20 EUR</span>
+              </div>
+              <div className={styles.bidStepItem}>
+                <span className={styles.bidStepRange}>10.001 — 100.000 EUR</span>
+                <span className={styles.bidStepVal}>50 EUR</span>
+              </div>
+              <div className={styles.bidStepItem}>
+                <span className={styles.bidStepRange}>100.001 — 1.000.000 EUR</span>
+                <span className={styles.bidStepVal}>100 EUR</span>
+              </div>
+              <div className={styles.bidStepItem}>
+                <span className={styles.bidStepRange}>1.000.001 — 2.000.000 EUR</span>
+                <span className={styles.bidStepVal}>200 EUR</span>
+              </div>
+              <div className={styles.bidStepItem}>
+                <span className={styles.bidStepRange}>2.000.001 EUR felett</span>
+                <span className={styles.bidStepVal}>500 EUR</span>
+              </div>
+            </div>
           </div>
         </section>
       </main>
