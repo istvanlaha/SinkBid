@@ -61,7 +61,7 @@ export default function Home() {
         </h1>
         <p className={styles.heroSub}>{t('hero.subtitle')}</p>
         <div className={styles.heroPulse}>
-          🔴 {t('hero.pulse')}
+          {t('hero.pulse')}
         </div>
         <div className={styles.heroStats}>
           <div className={styles.heroStat}>
