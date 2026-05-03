@@ -67,6 +67,21 @@ export default function BidCard({ product }) {
   const savings = Math.round((1 - state.currentPrice / product.originalPrice) * 100)
   const step = getBidStep(product.originalPrice)
   const isUrgent = state.timerSeconds <= 60 && state.buying
+  const dropped = product.originalPrice - state.currentPrice
+  const dropPercent = Math.min(100, Math.round((dropped / product.originalPrice) * 100))
+
+  const [secondsAgo, setSecondsAgo] = useState(() =>
+    state.lastBidAt ? Math.floor((Date.now() - state.lastBidAt) / 1000) : null
+  )
+
+  useEffect(() => {
+    if (!state.lastBidAt) return
+    setSecondsAgo(Math.floor((Date.now() - state.lastBidAt) / 1000))
+    const interval = setInterval(() => {
+      setSecondsAgo(Math.floor((Date.now() - state.lastBidAt) / 1000))
+    }, 1000)
+    return () => clearInterval(interval)
+  }, [state.lastBidAt])
 
   if (state.sold) {
     return (
@@ -131,10 +146,29 @@ export default function BidCard({ product }) {
         </div>
       </div>
 
+      <div className={styles.progressWrap}>
+        <div className={styles.progressMeta}>
+          <span>{t('bid.dropped')} {formatPrice(dropped, currency)}</span>
+          <span>{t('bid.remaining')} {formatPrice(state.currentPrice, currency)}</span>
+        </div>
+        <div className={styles.progressBg}>
+          <div className={styles.progressFill} style={{ width: `${dropPercent}%` }} />
+        </div>
+      </div>
+
       <div className={styles.body}>
        <div className={styles.catLabel}>{t(`categories.${product.category}`)}</div>
         <h3 className={styles.name} onClick={() => navigate(`/product/${product.id}`)} style={{cursor: 'pointer'}}>{product.name}</h3>
         <p className={styles.desc}>{product.description.substring(0, 80)}...</p>
+
+        {state.biddersCount > 0 && secondsAgo !== null && (
+          <div key={secondsAgo} className={styles.urgencyLabel}>
+            {secondsAgo < 60
+              ? t('bid.lastEntrySeconds', { n: secondsAgo })
+              : t('bid.lastEntryMinutes', { n: Math.floor(secondsAgo / 60) })
+            }
+          </div>
+        )}
 
         <div className={styles.priceRow}>
           <div className={styles.priceTop}>

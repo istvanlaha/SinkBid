@@ -48,6 +48,10 @@ const resources = {
         watchers: 'licitáló',
         watching: 'néző',
         blurHint: 'Betekints az árért',
+        dropped: 'Esett',
+        remaining: 'Maradt',
+        lastEntrySeconds: '⚡ {{n}} másodperce lépett be valaki',
+        lastEntryMinutes: '⚡ {{n}} perce lépett be valaki',
       },
       categories: {
         all: 'Összes',
@@ -197,6 +201,10 @@ const resources = {
         watchers: 'bidders',
         watching: 'watching',
         blurHint: 'Join to see the price',
+        dropped: 'Dropped',
+        remaining: 'Remaining',
+        lastEntrySeconds: '⚡ {{n}} seconds ago someone joined',
+        lastEntryMinutes: '⚡ {{n}} minutes ago someone joined',
       },
       categories: {
         all: 'All',
@@ -345,6 +353,10 @@ const resources = {
         watchers: 'Bieter',
         watching: 'schaut gerade',
         blurHint: 'Eintreten um den Preis zu sehen',
+        dropped: 'Gesunken',
+        remaining: 'Verbleibend',
+        lastEntrySeconds: '⚡ vor {{n}} Sekunden ist jemand eingetreten',
+        lastEntryMinutes: '⚡ vor {{n}} Minuten ist jemand eingetreten',
       },
       categories: {
         all: 'Alle',

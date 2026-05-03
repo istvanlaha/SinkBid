@@ -234,6 +234,7 @@ INITIAL_PRODUCTS.forEach(p => {
     timerSeconds: 300,
     sold: false,
     soldPrice: null,
+    lastBidAt: Date.now() - Math.floor(Math.random() * 120000),
   }
 })
 
@@ -261,6 +262,7 @@ export const useBidStore = create((set, get) => ({
           joined: true,
           biddersCount: s.bidStates[productId].biddersCount + 1,
           currentPrice: Math.max(0, s.bidStates[productId].currentPrice - step),
+          lastBidAt: Date.now(),
         }
       }
     }))
@@ -278,6 +280,7 @@ export const useBidStore = create((set, get) => ({
           ...s.bidStates[productId],
           biddersCount: s.bidStates[productId].biddersCount + 1,
           currentPrice: Math.max(0, s.bidStates[productId].currentPrice - step),
+          lastBidAt: Date.now(),
         }
       }
     }))
