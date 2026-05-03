@@ -76,8 +76,8 @@ const resources = {
   en: {
     translation: {
       nav: {
-        activeBids: 'Active Bids',
-        sold: 'Sold Items',
+        activeBids: 'Live Auctions',
+        sold: 'Sold',
         howItWorks: 'How It Works',
         categories: 'Categories',
         login: 'Sign In',
@@ -98,9 +98,9 @@ const resources = {
         bidders: 'bidders',
         currentPrice: 'Current price',
         step: 'Bid step',
-        insight: 'Entries',
+        insight: 'Bidders',
         saving: 'Saving',
-        joinBid: 'Enter bid',
+        joinBid: 'Join Auction',
         joined: 'Entered',
         buyNow: 'Buy now',
         buying: 'Purchase in progress',
@@ -147,8 +147,8 @@ const resources = {
   de: {
     translation: {
       nav: {
-        activeBids: 'Aktive Gebote',
-        sold: 'Verkaufte Artikel',
+        activeBids: 'Laufende Auktionen',
+        sold: 'Verkauft',
         howItWorks: 'Wie es funktioniert',
         categories: 'Kategorien',
         login: 'Anmelden',
@@ -168,10 +168,10 @@ const resources = {
         live: 'Live',
         bidders: 'Bieter',
         currentPrice: 'Aktueller Preis',
-        step: 'Gebotsschritt',
-        insight: 'Einträge',
+        step: 'Preisschritt',
+        insight: 'Bieter',
         saving: 'Ersparnis',
-        joinBid: 'Eintreten',
+        joinBid: 'Zur Auktion',
         joined: 'Eingetreten',
         buyNow: 'Jetzt kaufen',
         buying: 'Kauf läuft',
