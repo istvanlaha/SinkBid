@@ -43,7 +43,7 @@ const resources = {
         entryFeeTitle: 'Betekintési díj & licit lépcső',
         viewAll: 'Összes megtekintése →',
         joinAction: 'Betekintek',
-        microCopy: 'Egyszer fizeted — aztán csak figyeled az árat',
+        microCopy: 'Egyszeri belépő — aztán tied a döntés',
       },
       categories: {
         all: 'Összes',
@@ -121,7 +121,7 @@ const resources = {
         entryFeeTitle: 'Entry fee & price drop per bid',
         viewAll: 'View all →',
         joinAction: 'Join',
-        microCopy: 'One-time fee — then just watch the price drop',
+        microCopy: 'One-time entry — then it\'s your call',
       },
       categories: {
         all: 'All',
