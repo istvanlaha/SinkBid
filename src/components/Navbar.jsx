@@ -9,7 +9,6 @@ const LANGS = [
   { code: 'hu', label: 'HU', dir: 'ltr' },
   { code: 'en', label: 'EN', dir: 'ltr' },
   { code: 'de', label: 'DE', dir: 'ltr' },
-  { code: 'zh', label: 'ZH', dir: 'ltr' },
 ];
 
 const CAT_COLUMNS = [
