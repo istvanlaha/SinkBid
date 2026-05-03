@@ -68,7 +68,7 @@ export default function HowItWorks() {
         </div>
 
         <div className={styles.modelBox}>
-          <h2 className={styles.modelTitle}>A SinkBid pénzügyi modellje</h2>
+          <h2 className={styles.modelTitle}>A SinkBid működése</h2>
           <div className={styles.modelGrid}>
             <div className={styles.modelItem}>
               <div className={styles.modelLabel}>BETEKINTÉSI DÍJ</div>
@@ -76,19 +76,19 @@ export default function HowItWorks() {
               <div className={styles.modelDesc}>Beleszámít a végső vételárba</div>
             </div>
             <div className={styles.modelItem}>
-              <div className={styles.modelLabel}>ÁRCSÖKKENTÉS / BELÉPÉS</div>
-              <div className={styles.modelVal}>Licit lépcső</div>
-              <div className={styles.modelDesc}>Az eladóhoz kerül komponzációként</div>
+              <div className={styles.modelLabel}>BETEKINTÉSI DÍJ = ÁRCSÖKKENTÉS</div>
+              <div className={styles.modelVal}>Aukció</div>
+              <div className={styles.modelDesc}>Az eladóhoz kerül a végleges vételárral együtt</div>
             </div>
             <div className={styles.modelItem}>
-              <div className={styles.modelLabel}>PLATFORM DÍJ / BELÉPÉS</div>
-              <div className={styles.modelVal}>0,20 EUR</div>
-              <div className={styles.modelDesc}>Üzemeltetési cost és profit</div>
+              <div className={styles.modelLabel}>NYERTES AUKCIÓ</div>
+              <div className={styles.modelVal}>A termék kifizetése</div>
+              <div className={styles.modelDesc}>Szállítás módjának kiválasztása</div>
             </div>
             <div className={styles.modelItem}>
-              <div className={styles.modelLabel}>ELADÓI JUTALÉK</div>
-              <div className={styles.modelVal}>2,5%</div>
-              <div className={styles.modelDesc}>A végső eladási árból levonva</div>
+              <div className={styles.modelLabel}>Termék átvétele</div>
+              <div className={styles.modelVal}>Visszajelzés</div>
+              <div className={styles.modelDesc}>ÖRÖM-BOLDOGSÁG</div>
             </div>
           </div>
         </div>
