@@ -20,187 +20,39 @@
   font-size: 44px;
   font-weight: 300;
   color: var(--teak-light);
+  margin-bottom: 0.5rem;
+}
+
+.headerSub {
+  font-size: 13px;
+  color: var(--teak-muted);
+  letter-spacing: 0.3px;
 }
 
 .main {
-  max-width: 760px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 3rem 2rem;
 }
 
-.steps {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 3rem;
+.empty {
+  text-align: center;
+  padding: 6rem 2rem;
 }
 
-.step {
-  display: flex;
-  gap: 2rem;
-  padding: 2rem 0;
-  border-bottom: 0.5px solid var(--border-light);
-}
+.emptyIcon { font-size: 48px; margin-bottom: 1rem; }
 
-.step:last-child { border-bottom: none; }
-
-.stepN {
-  font-family: var(--font-display);
-  font-size: 48px;
-  font-weight: 300;
-  color: var(--teak-gold);
-  opacity: 0.6;
-  line-height: 1;
-  flex-shrink: 0;
-  width: 72px;
-  text-align: right;
-}
-
-.stepContent { flex: 1; padding-top: 6px; }
-
-.stepTitle {
-  font-family: var(--font-display);
-  font-size: 22px;
-  font-weight: 400;
-  color: var(--dark);
-  margin-bottom: 10px;
-}
-
-.stepDesc {
-  font-size: 14px;
-  color: var(--text-muted);
-  line-height: 1.7;
-}
-
-.stepDesc strong {
-  color: var(--dark);
-}
-
-.bidStepTable {
-  margin-top: 1rem;
-  border: 0.5px solid var(--sand-mid);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.bidStepRow {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 16px;
-  border-bottom: 0.5px solid var(--sand-mid);
-  font-size: 13px;
-  color: var(--sand-text);
-  background: var(--white);
-}
-
-.bidStepRow:last-child { border-bottom: none; }
-
-.bidStepRow:nth-child(odd) { background: var(--sand); }
-
-.bidStepVal {
-  font-family: var(--font-display);
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--sand-dark);
-  letter-spacing: 0.5px;
-}
-
-.modelBox {
-  background: var(--teak);
-  padding: 2rem;
-  border-radius: 12px;
-  border: 1px solid var(--teak-border);
-  margin-bottom: 2rem;
-}
-
-.modelTitle {
-  font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 300;
-  color: var(--teak-light);
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.5px;
-}
-
-.modelGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1rem;
-}
-
-.modelItem {
-  padding: 1rem;
-  border: 0.5px solid var(--teak-border);
-  border-radius: 10px;
-  background: rgba(255,255,255,0.5);
-}
-
-.modelLabel {
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--teak-muted);
-  margin-bottom: 6px;
-}
-
-.modelVal {
+.emptyText {
   font-family: var(--font-display);
   font-size: 24px;
   font-weight: 300;
-  color: var(--teak-gold);
-  margin-bottom: 4px;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
 }
 
-.modelDesc {
-  font-size: 11px;
-  color: var(--teak-muted);
-  line-height: 1.5;
-}
-
-.example {
-  background: var(--white);
-  border: 0.5px solid var(--border-light);
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.exampleTitle {
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  padding: 1rem 1.25rem;
-  border-bottom: 0.5px solid var(--border-light);
-  background: var(--light);
-}
-
-.exampleRows { padding: 0 1.25rem; }
-
-.exRow {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.875rem 0;
-  border-bottom: 0.5px solid var(--border-light);
+.emptySub {
   font-size: 14px;
-  color: var(--dark);
-}
-
-.exRow span:last-child { color: var(--text-muted); }
-
-.exRowTotal {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 0;
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--dark);
-}
-
-.exRowTotal span:last-child {
-  color: var(--teak-gold);
-  font-weight: 500;
+  color: var(--text-muted);
 }
 
 .catSection { margin-bottom: 3.5rem; }
@@ -231,6 +83,8 @@
   border: 0.5px solid var(--border-light);
   border-radius: 10px;
   overflow: hidden;
+  pointer-events: none;
+  user-select: none;
 }
 
 .miniCardImg {
@@ -241,53 +95,15 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: hidden;
 }
 
 .miniCardEmoji { font-size: 48px; opacity: 0.35; }
 
-.miniLiveBanner {
+.soldOverlay {
   position: absolute;
-  top: 0; left: 0; right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 6px 8px;
-}
-
-.miniLiveBadge {
-  background: var(--dark);
-  color: var(--teak-gold);
-  font-size: 9px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  padding: 3px 7px;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.miniLiveDot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #E74C3C;
-  display: inline-block;
-  animation: livePulse 1.4s ease-in-out infinite;
-}
-
-@keyframes livePulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.2; }
-}
-
-.miniSavingBadge {
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--white);
-  background: var(--teak-gold);
-  padding: 2px 7px;
-  border-radius: 4px;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.18);
 }
 
 .miniCardBody { padding: 0.75rem; }
@@ -298,54 +114,61 @@
   font-weight: 400;
   color: var(--dark);
   line-height: 1.3;
-  margin-bottom: 3px;
+  margin-bottom: 0.6rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.miniCardDesc {
-  font-size: 11px;
-  color: var(--text-muted);
-  line-height: 1.4;
-  margin-bottom: 8px;
+.priceBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 0.6rem;
 }
 
-.miniCardPriceRow {
+.priceRow {
   display: flex;
+  justify-content: space-between;
   align-items: baseline;
   gap: 6px;
-  margin-bottom: 6px;
 }
 
-.miniCardPrice {
-  font-family: var(--font-display);
-  font-size: 18px;
-  font-weight: 300;
-  color: var(--dark);
+.priceLabel {
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
 }
 
-.miniCardOrig {
-  font-size: 11px;
+.priceValOrig {
+  font-size: 12px;
   color: var(--text-muted);
   text-decoration: line-through;
 }
 
-.miniCardFooter {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.salePrice {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--dark);
+  letter-spacing: 0.3px;
 }
 
-.miniCardStep { font-size: 10px; color: var(--text-muted); letter-spacing: 0.5px; }
+.cardFooter {
+  display: flex;
+  justify-content: flex-end;
+}
 
-.miniCardSaving {
+.savingBadge {
   font-size: 11px;
-  font-weight: 500;
-  color: var(--teak-gold);
-  background: var(--sand);
-  padding: 2px 7px;
-  border-radius: 10px;
+  font-weight: 600;
+  color: var(--white);
+  background: var(--teak-gold);
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.3px;
 }
 
 @media (max-width: 1024px) { .catGrid { grid-template-columns: repeat(3, 1fr); } }
