@@ -146,7 +146,10 @@ export default function BidCard({ product }) {
           </div>
           <div className={styles.stepBox}>
             <div className={styles.stepLabel}>{t('bid.step')}</div>
-            <div className={styles.stepVal}>{formatPrice(step, currency)}</div>
+            <div className={styles.stepVal}>
+                {formatPrice(step, currency)}
+                <span className={styles.stepUnit}>{t('bid.stepUnit')}</span>
+              </div>
           </div>
         </div>
 

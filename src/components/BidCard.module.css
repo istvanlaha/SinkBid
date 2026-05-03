@@ -351,6 +351,14 @@
   color: var(--teak-gold);
 }
 
+.stepUnit {
+  font-size: 10px;
+  color: var(--teak-muted);
+  letter-spacing: 1px;
+  display: block;
+  margin-top: 2px;
+}
+
 .btnRow {
   display: flex;
   flex-direction: column;

@@ -26,8 +26,9 @@ const resources = {
       bid: {
         live: 'Élő',
         bidders: 'licitáló',
-        currentPrice: 'Jelenlegi ár',
+        currentPrice: 'Aukció állása — most ennyiért vihető',
         step: 'Árcsökkentés',
+        stepUnit: '/ Betekintés',
         insight: 'Betekintő',
         saving: 'Megtakarítás',
         joinBid: 'Betekintek',
@@ -115,8 +116,9 @@ const resources = {
       bid: {
         live: 'Live',
         bidders: 'bidders',
-        currentPrice: 'Current price',
+        currentPrice: 'Current bid — take it now for',
         step: 'Price drop',
+        stepUnit: '/ entry',
         insight: 'Watching',
         saving: 'Saving',
         joinBid: 'Get Access',
@@ -204,8 +206,9 @@ const resources = {
       bid: {
         live: 'Live',
         bidders: 'Bieter',
-        currentPrice: 'Aktueller Preis',
-        step: 'Preisschritt',
+        currentPrice: 'Aktuelles Gebot — jetzt erhältlich für',
+        step: 'Preissenkung',
+        stepUnit: '/ Eintritt',
         insight: 'Bieter',
         saving: 'Ersparnis',
         joinBid: 'Zur Auktion',
