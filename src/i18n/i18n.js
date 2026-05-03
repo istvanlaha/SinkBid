@@ -220,7 +220,7 @@ const resources = {
         entryFeeTitle: 'Eintrittsgebühr & Preisschritt',
         viewAll: 'Alle anzeigen →',
         joinAction: 'Bieten',
-        microCopy: 'Einmalige Gebühr — dann nur den Preis beobachten',
+        microCopy: 'Einmalig eintreten — dann liegt es bei dir',
         watchers: 'Bieter',
         watching: 'zuschauen',
       },
