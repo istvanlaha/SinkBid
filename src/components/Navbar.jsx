@@ -68,6 +68,9 @@ export default function Navbar() {
           <span className={styles.link}>{t('nav.categories')} ▾</span>
           {catOpen && (
             <div className={styles.dropdownMenu}>
+              <div className={styles.dropdownHeader}>
+                {t('nav.categoriesTitle')}
+              </div>
               <div className={styles.dropdownCols}>
                 {CAT_COLUMNS.map((col, ci) => (
                   <div key={ci} className={styles.dropdownCol}>
@@ -90,11 +93,7 @@ export default function Navbar() {
           )}
         </div>
 
-        <Link
-          to="/"
-          className={styles.link}
-          onClick={() => setTimeout(() => document.getElementById('active-bids')?.scrollIntoView({ behavior: 'smooth' }), 100)}
-        >
+        <Link to="/sold" className={styles.link}>
           {t('nav.activeBids')}
         </Link>
 
