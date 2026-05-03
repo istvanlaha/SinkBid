@@ -18,7 +18,12 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.top}>
         <div className={styles.brand}>
-          <div className={styles.logo}>Sink<span>Bid</span></div>
+          <div className={styles.logo}>
+            <img src="/images/logo.png" alt="" className={styles.logoImg} />
+            <span className={styles.logoText}>
+              S<span className={styles.logoArrow}>↓</span>NK<span className={styles.logoBid}>Bid</span>
+            </span>
+          </div>
           <p className={styles.tagline}>{t('footer.tagline')}</p>
         </div>
 

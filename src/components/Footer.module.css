@@ -16,16 +16,34 @@
 .brand {}
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.75rem;
+}
+
+.logoImg {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+.logoText {
   font-family: var(--font-display);
   font-size: 28px;
   font-weight: 300;
   color: var(--teak-gold);
   letter-spacing: 4px;
   text-transform: uppercase;
-  margin-bottom: 0.75rem;
 }
 
-.logo span {
+.logoArrow {
+  font-size: 1em;
+  color: var(--teak-gold);
+  font-style: normal;
+}
+
+.logoBid {
   color: var(--sand-dark);
   font-style: italic;
 }
