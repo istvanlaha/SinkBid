@@ -6,7 +6,7 @@ import styles from './Footer.module.css'
 const FOOTER_CATS = [
   'orak', 'ekszer', 'muveszet', 'gyujtheto', 'ingatlan', 'jarmuvek',
   'szamtech', 'mobil', 'muszaki', 'konyvek', 'jatekok', 'ipari',
-  'divat', 'szepseg', 'sport', 'otthon', 'butor', 'bakelit', 'film',
+  'divat', 'szepseg', 'sport', 'otthon', 'butor',
 ]
 
 export default function Footer() {

@@ -99,7 +99,7 @@ const resources = {
       footer: {
         tagline: 'Az ár süllyed. Az esélyed nő.',
         buyCol: 'Vásárlás',
-        activeBids: 'Aktív licitek',
+        activeBids: 'Aukciók',
         howItWorks: 'Hogyan működik',
         buyerReg: 'Regisztráció vevőként',
         buyerTerms: 'Vevői feltételek',
@@ -230,7 +230,7 @@ const resources = {
       footer: {
         tagline: 'The price drops. Your chance rises.',
         buyCol: 'Buy',
-        activeBids: 'Active Bids',
+        activeBids: 'Auctions',
         howItWorks: 'How It Works',
         buyerReg: 'Register as Buyer',
         buyerTerms: 'Buyer Terms',
@@ -360,7 +360,7 @@ const resources = {
       footer: {
         tagline: 'Der Preis sinkt. Deine Chance steigt.',
         buyCol: 'Kaufen',
-        activeBids: 'Aktive Gebote',
+        activeBids: 'Auktionen',
         howItWorks: 'Wie es funktioniert',
         buyerReg: 'Käufer registrieren',
         buyerTerms: 'Käuferbedingungen',

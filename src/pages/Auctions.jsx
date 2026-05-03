@@ -7,7 +7,7 @@ import styles from './Auctions.module.css'
 const CATEGORIES = [
   'orak', 'ekszer', 'muveszet', 'gyujtheto', 'ingatlan', 'jarmuvek',
   'szamtech', 'mobil', 'muszaki', 'konyvek', 'jatekok', 'ipari',
-  'divat', 'szepseg', 'sport', 'otthon', 'butor', 'bakelit', 'film',
+  'divat', 'szepseg', 'sport', 'otthon', 'butor',
 ]
 
 export default function Auctions() {
