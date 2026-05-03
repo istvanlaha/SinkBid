@@ -292,8 +292,9 @@
 
 .priceRow {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
   margin-bottom: 0.875rem;
   padding-top: 0.75rem;
   border-top: 0.5px solid var(--border-light);
@@ -335,9 +336,13 @@
   text-decoration: line-through;
 }
 
-.priceTop { flex: 1; }
+.priceTop { width: 100%; }
 
-.stepRow { text-align: right; }
+.stepRow {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
 
 .stepLabel {
   font-size: 9px;
