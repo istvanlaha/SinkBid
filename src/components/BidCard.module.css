@@ -437,3 +437,34 @@
   line-height: 1.5;
   padding: 0 4px;
 }
+
+.blurred {
+  filter: blur(6px);
+  user-select: none;
+  pointer-events: none;
+  transition: filter 0.3s ease;
+}
+
+.priceWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.blurHint {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--teak-gold);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.priceWrapper:hover .blurHint {
+  opacity: 1;
+}

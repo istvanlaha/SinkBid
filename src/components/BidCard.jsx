@@ -119,7 +119,9 @@ export default function BidCard({ product }) {
       <div className={styles.tensionBar}>
         <div className={styles.tensionLeft}>
           <span className={styles.tensionDot} />
-          <span className={styles.tensionCount}>{state.biddersCount}</span>
+          <span className={`${styles.tensionCount} ${!state.joined ? styles.blurred : ''}`}>
+            {state.biddersCount}
+          </span>
           <span className={styles.tensionText}>{t('bid.watchers')}</span>
         </div>
         <div className={styles.tensionRight}>
@@ -139,18 +141,28 @@ export default function BidCard({ product }) {
             <div>
               <div className={styles.priceLabel}>{t('bid.currentPrice')}</div>
               <div className={styles.priceGroup}>
-                <span className={styles.price} ref={priceRef}>
-                  {formatPrice(state.currentPrice, currency)}
-                </span>
-                <span className={styles.priceOrig}>{formatPrice(product.originalPrice, currency)}</span>
+                <div className={styles.priceWrapper}>
+                  <span className={`${styles.price} ${!state.joined ? styles.blurred : ''}`} ref={priceRef}>
+                    {formatPrice(state.currentPrice, currency)}
+                  </span>
+                  {!state.joined && <span className={styles.blurHint}>{t('bid.blurHint')}</span>}
+                </div>
+                <div className={styles.priceWrapper}>
+                  <span className={`${styles.priceOrig} ${!state.joined ? styles.blurred : ''}`}>
+                    {formatPrice(product.originalPrice, currency)}
+                  </span>
+                </div>
               </div>
             </div>
           </div>
           <div className={styles.stepRow}>
             <div className={styles.stepLabel}>{t('bid.step')}</div>
-            <div className={styles.stepVal}>
-              {formatPrice(step, currency)}
-              <span className={styles.stepUnit}>{t('bid.stepUnit')}</span>
+            <div className={styles.priceWrapper}>
+              <div className={`${styles.stepVal} ${!state.joined ? styles.blurred : ''}`}>
+                {formatPrice(step, currency)}
+                <span className={styles.stepUnit}>{t('bid.stepUnit')}</span>
+              </div>
+              {!state.joined && <span className={styles.blurHint}>{t('bid.blurHint')}</span>}
             </div>
           </div>
         </div>

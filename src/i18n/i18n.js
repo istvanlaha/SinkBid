@@ -47,6 +47,7 @@ const resources = {
         microCopy: 'Egyszeri belépő — aztán tied a döntés',
         watchers: 'licitáló',
         watching: 'néző',
+        blurHint: 'Betekints az árért',
       },
       categories: {
         all: 'Összes',
@@ -195,6 +196,7 @@ const resources = {
         microCopy: 'One-time entry — then it\'s your call',
         watchers: 'bidders',
         watching: 'watching',
+        blurHint: 'Join to see the price',
       },
       categories: {
         all: 'All',
@@ -342,6 +344,7 @@ const resources = {
         microCopy: 'Einmalig eintreten — dann liegt es bei dir',
         watchers: 'Bieter',
         watching: 'schaut gerade',
+        blurHint: 'Eintreten um den Preis zu sehen',
       },
       categories: {
         all: 'Alle',
