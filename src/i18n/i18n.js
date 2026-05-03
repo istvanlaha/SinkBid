@@ -90,6 +90,12 @@ const resources = {
         empty: 'Nincs lezárt aukció',
         emptySub: 'Hamarosan megjelennek az első eredmények.',
       },
+      auctions: {
+        tag: 'Fordított licit platform',
+        title: 'Aukciók',
+        subtitle: 'Mert jó dolgokat mindenki megérdemel.',
+        activeCount: 'aktív aukció',
+      },
       footer: {
         tagline: 'Az ár süllyed. Az esélyed nő.',
         buyCol: 'Vásárlás',
@@ -215,6 +221,12 @@ const resources = {
         empty: 'No closed auctions yet',
         emptySub: 'Results will appear here soon.',
       },
+      auctions: {
+        tag: 'Reverse auction platform',
+        title: 'Auctions',
+        subtitle: 'Because everyone deserves nice things.',
+        activeCount: 'active auctions',
+      },
       footer: {
         tagline: 'The price drops. Your chance rises.',
         buyCol: 'Buy',
@@ -338,6 +350,12 @@ const resources = {
         salePrice: 'Verkaufspreis',
         empty: 'Noch keine abgeschlossenen Auktionen',
         emptySub: 'Ergebnisse erscheinen hier bald.',
+      },
+      auctions: {
+        tag: 'Umgekehrte Auktion',
+        title: 'Auktionen',
+        subtitle: 'Weil jeder schöne Dinge verdient.',
+        activeCount: 'aktive Auktionen',
       },
       footer: {
         tagline: 'Der Preis sinkt. Deine Chance steigt.',
