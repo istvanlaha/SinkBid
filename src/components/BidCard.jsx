@@ -118,9 +118,12 @@ export default function BidCard({ product }) {
 
         <div className={styles.btnRow}>
           {!state.joined ? (
-            <button className={styles.btnJoin} onClick={() => joinBid(product.id)}>
-              {t('bid.joinAction')} — {formatPrice(step, currency)}
-            </button>
+            <>
+              <button className={styles.btnJoin} onClick={() => joinBid(product.id)}>
+                {t('bid.joinAction')} — {formatPrice(step, currency)}
+              </button>
+              <div className={styles.microCopy}>{t('bid.microCopy')}</div>
+            </>
           ) : (
             <>
               <button className={styles.btnJoined} disabled>
