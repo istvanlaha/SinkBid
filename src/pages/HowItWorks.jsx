@@ -47,7 +47,7 @@ export default function HowItWorks() {
             <div className={styles.stepN}>01</div>
             <div className={styles.stepContent}>
               <h3 className={styles.stepTitle}>Válassz terméket</h3>
-              <p className={styles.stepDesc}>Böngéssz a kategóriák között és válaszd ki ami érdekel. Minden kategóriában prémium termékeket találsz.</p>
+              <p className={styles.stepDesc}>Böngéssz a kategóriák között és válaszd ki ami érdekel.<br />Megtalálod azt a tárgyat amit szívesen megvásárolnál csökkentett áron.</p>
             </div>
           </div>
 
