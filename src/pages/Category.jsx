@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useBidStore, SUBCATEGORIES, EUR_TO_USD, getBidStep } from '../store/bidStore'
@@ -40,9 +41,20 @@ export default function Category() {
   })
 
   const catLabel = t(`categories.${catId}`, catId)
+  const seoTitle = t('seo.categoryTitle', { cat: catLabel })
+  const seoDesc = t('seo.categoryDesc', { cat: catLabel })
 
   return (
     <div className={styles.wrap}>
+      <Helmet>
+        <title>{seoTitle}</title>
+        <meta name="description" content={seoDesc} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={t('seo.siteName')} />
+        <meta property="og:title" content={seoTitle} />
+        <meta property="og:description" content={seoDesc} />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
       <div className={styles.header}>
         <div className={styles.headerTag}>Active Bids</div>
         <h1 className={styles.headerTitle}>{catLabel}</h1>

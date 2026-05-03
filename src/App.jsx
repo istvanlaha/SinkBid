@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
+import { HelmetProvider } from 'react-helmet-async'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -18,6 +19,7 @@ import CookieConsent from './components/CookieConsent'
 
 export default function App() {
   return (
+    <HelmetProvider>
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <ScrollToTop />
       <Navbar />
@@ -35,5 +37,6 @@ export default function App() {
       <Footer />
       <CookieConsent />
     </div>
+    </HelmetProvider>
   )
 }

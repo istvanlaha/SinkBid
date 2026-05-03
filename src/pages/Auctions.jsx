@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet-async'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { useBidStore } from '../store/bidStore'
@@ -15,8 +16,20 @@ export default function Auctions() {
   const { getByCategory } = useBidStore()
   const navigate = useNavigate()
 
+  const title = t('seo.auctionsTitle')
+  const desc = t('seo.auctionsDesc')
+
   return (
     <div className={styles.wrap}>
+      <Helmet>
+        <title>{title}</title>
+        <meta name="description" content={desc} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={t('seo.siteName')} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={desc} />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
       <div className={styles.header}>
         <div className={styles.headerTag}>{t('auctions.tag')}</div>
         <h1 className={styles.headerTitle}>{t('auctions.title')}</h1>

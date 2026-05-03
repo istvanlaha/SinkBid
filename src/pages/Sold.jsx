@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet-async'
 import { useTranslation } from 'react-i18next'
 import { useBidStore } from '../store/bidStore'
 import styles from './Sold.module.css'
@@ -23,8 +24,20 @@ export default function Sold() {
 
   const hasItems = SHOWCASE_CATEGORIES.some(cat => getByCategory(cat.id).length > 0)
 
+  const title = t('seo.soldTitle')
+  const desc = t('seo.soldDesc')
+
   return (
     <div className={styles.wrap}>
+      <Helmet>
+        <title>{title}</title>
+        <meta name="description" content={desc} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={t('seo.siteName')} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={desc} />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
       <div className={styles.header}>
         <div className={styles.headerTag}>{t('sold.tag')}</div>
         <h1 className={styles.headerTitle}>{t('sold.title')}</h1>

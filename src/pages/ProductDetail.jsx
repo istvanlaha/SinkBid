@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useBidStore, getBidStep, EUR_TO_USD } from '../store/bidStore'
@@ -53,6 +54,8 @@ export default function ProductDetail() {
   const step = getBidStep(product.originalPrice)
   const savings = Math.round((1 - state.currentPrice / product.originalPrice) * 100)
   const images = (product.images?.length ? product.images : [product.image]).filter(Boolean)
+  const seoTitle = `${product.name} — SinkBid`
+  const seoDesc = product.description.substring(0, 150)
   const isUrgent = state.timerSeconds <= 60 && state.buying
   const lang = i18n.language || 'hu'
 
@@ -180,6 +183,16 @@ export default function ProductDetail() {
 
   return (
     <div className={styles.wrap}>
+      <Helmet>
+        <title>{seoTitle}</title>
+        <meta name="description" content={seoDesc} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="SinkBid" />
+        <meta property="og:title" content={seoTitle} />
+        <meta property="og:description" content={seoDesc} />
+        {images[0] && <meta property="og:image" content={images[0]} />}
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
       <button className={styles.backBtn} onClick={() => navigate(-1)}>{L.back}</button>
 
       <div className={styles.main}>

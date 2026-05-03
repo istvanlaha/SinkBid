@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { useBidStore, CATEGORIES } from '../store/bidStore'
@@ -45,8 +46,20 @@ export default function Home() {
 
   const totalBidders = Object.values(bidStates).reduce((acc, s) => acc + s.biddersCount, 0)
 
+  const title = t('seo.homeTitle')
+  const desc = t('seo.homeDesc')
+
   return (
     <div>
+      <Helmet>
+        <title>{title}</title>
+        <meta name="description" content={desc} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={t('seo.siteName')} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={desc} />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
       <section className={styles.hero}>
         <div className={styles.heroTag}>{t('hero.tag')}</div>
         <h1 className={styles.heroTitle}>

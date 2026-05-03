@@ -1,12 +1,24 @@
 import React from 'react'
+import { Helmet } from 'react-helmet-async'
 import { useTranslation } from 'react-i18next'
 import styles from './HowItWorks.module.css'
 
 export default function HowItWorks() {
   const { t } = useTranslation()
+  const title = t('seo.howTitle')
+  const desc = t('seo.howDesc')
 
   return (
     <div className={styles.wrap}>
+      <Helmet>
+        <title>{title}</title>
+        <meta name="description" content={desc} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={t('seo.siteName')} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={desc} />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
 
       <div className={styles.header}>
         <div className={styles.headerTag}>Fordított licit platform</div>
