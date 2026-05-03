@@ -88,8 +88,8 @@ export default function HowItWorks() {
             <div className={styles.stepN}>04</div>
             <div className={styles.stepContent}>
               <h3 className={styles.stepTitle}>Vedd el — vagy kockáztass</h3>
-              <p className={styles.stepDesc}>Ha megfelelő az ár, kattints a <strong>Megveszem most</strong> gombra.<br />5 percen belül ki kell fizetned a fennmaradó összeget kártyával.</p>
-              <p className={styles.stepDesc}>Ha nem fizetsz 5 percen belül, az aukció folytatódik onnan ahol tartott.<br />Ha vársz, más is elviheti előled — ez az aukciós játékunk lényege!</p>
+              <p className={styles.stepDesc}>Ha megfelelő az ár, kattints a <strong>Megveszem most</strong> gombra. 5 percen belül ki kell fizetned a fennmaradó összeget kártyával.</p>
+              <p className={styles.stepDesc}>Ha nem fizetsz 5 percen belül, az aukció folytatódik onnan ahol tartott. Ha vársz, más is elviheti előled — ez az aukciós játékunk lényege!</p>
             </div>
           </div>
 
