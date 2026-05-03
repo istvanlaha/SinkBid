@@ -91,7 +91,7 @@ const resources = {
         emptySub: 'Hamarosan megjelennek az első eredmények.',
       },
       footer: {
-        tagline: 'A fordított aukció platform kivételes tárgyakhoz.',
+        tagline: 'Az ár süllyed. Az esélyed nő.',
         buyCol: 'Vásárlás',
         activeBids: 'Aktív licitek',
         howItWorks: 'Hogyan működik',
@@ -216,7 +216,7 @@ const resources = {
         emptySub: 'Results will appear here soon.',
       },
       footer: {
-        tagline: 'The reverse auction platform for exceptional items.',
+        tagline: 'The price drops. Your chance rises.',
         buyCol: 'Buy',
         activeBids: 'Active Bids',
         howItWorks: 'How It Works',
@@ -340,7 +340,7 @@ const resources = {
         emptySub: 'Ergebnisse erscheinen hier bald.',
       },
       footer: {
-        tagline: 'Die Auktionsplattform für besondere Gegenstände.',
+        tagline: 'Der Preis sinkt. Deine Chance steigt.',
         buyCol: 'Kaufen',
         activeBids: 'Aktive Gebote',
         howItWorks: 'Wie es funktioniert',
