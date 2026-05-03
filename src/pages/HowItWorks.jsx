@@ -14,6 +14,33 @@ export default function HowItWorks() {
       </div>
 
       <div className={styles.main}>
+
+        <div className={styles.modelBox}>
+          <h2 className={styles.modelTitle}>A SinkBid működése</h2>
+          <div className={styles.modelGrid}>
+            <div className={styles.modelItem}>
+              <div className={styles.modelLabel}>BETEKINTÉSI DÍJ</div>
+              <div className={styles.modelVal}>Ártól függő</div>
+              <div className={styles.modelDesc}>Beleszámít a végső vételárba</div>
+            </div>
+            <div className={styles.modelItem}>
+              <div className={styles.modelLabel}>BETEKINTÉSI DÍJ = ÁRCSÖKKENTÉS</div>
+              <div className={styles.modelVal}>Aukció</div>
+              <div className={styles.modelDesc}>Az eladóhoz kerül a végleges vételárral együtt</div>
+            </div>
+            <div className={styles.modelItem}>
+              <div className={styles.modelLabel}>NYERTES AUKCIÓ</div>
+              <div className={styles.modelVal}>A termék kifizetése</div>
+              <div className={styles.modelDesc}>Szállítás módjának kiválasztása</div>
+            </div>
+            <div className={styles.modelItem}>
+              <div className={styles.modelLabel}>Termék átvétele</div>
+              <div className={styles.modelVal}>Visszajelzés</div>
+              <div className={styles.modelDesc}>ÖRÖM-BOLDOGSÁG</div>
+            </div>
+          </div>
+        </div>
+
         <div className={styles.steps}>
 
           <div className={styles.step}>
@@ -65,32 +92,6 @@ export default function HowItWorks() {
             </div>
           </div>
 
-        </div>
-
-        <div className={styles.modelBox}>
-          <h2 className={styles.modelTitle}>A SinkBid működése</h2>
-          <div className={styles.modelGrid}>
-            <div className={styles.modelItem}>
-              <div className={styles.modelLabel}>BETEKINTÉSI DÍJ</div>
-              <div className={styles.modelVal}>Ártól függő</div>
-              <div className={styles.modelDesc}>Beleszámít a végső vételárba</div>
-            </div>
-            <div className={styles.modelItem}>
-              <div className={styles.modelLabel}>BETEKINTÉSI DÍJ = ÁRCSÖKKENTÉS</div>
-              <div className={styles.modelVal}>Aukció</div>
-              <div className={styles.modelDesc}>Az eladóhoz kerül a végleges vételárral együtt</div>
-            </div>
-            <div className={styles.modelItem}>
-              <div className={styles.modelLabel}>NYERTES AUKCIÓ</div>
-              <div className={styles.modelVal}>A termék kifizetése</div>
-              <div className={styles.modelDesc}>Szállítás módjának kiválasztása</div>
-            </div>
-            <div className={styles.modelItem}>
-              <div className={styles.modelLabel}>Termék átvétele</div>
-              <div className={styles.modelVal}>Visszajelzés</div>
-              <div className={styles.modelDesc}>ÖRÖM-BOLDOGSÁG</div>
-            </div>
-          </div>
         </div>
 
         <div className={styles.example}>
