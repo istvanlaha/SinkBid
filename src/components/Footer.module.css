@@ -5,7 +5,7 @@
 }
 
 .top {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 3rem 2rem 2rem;
   display: grid;
@@ -65,45 +65,8 @@
 
 .colLink:hover { color: var(--teak-gold); }
 
-.bidStepBar {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1.25rem 2rem;
-  border-top: 0.5px solid var(--sand-mid);
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.bidStepTitle {
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--teak-gold);
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.bidStepRow {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.bidStepRow span {
-  font-size: 11px;
-  color: var(--text-muted);
-}
-
-.bidStepRow strong {
-  color: var(--teak-gold);
-  font-weight: 500;
-}
-
 .bottom {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 1.25rem 2rem;
   border-top: 0.5px solid var(--sand-mid);
@@ -143,7 +106,6 @@
     gap: 2rem;
   }
   .cols { grid-template-columns: repeat(2, 1fr); }
-  .bidStepRow { gap: 1rem; }
   .bottom { flex-direction: column; align-items: flex-start; }
 }
 
