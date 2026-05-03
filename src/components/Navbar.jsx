@@ -98,8 +98,6 @@ export default function Navbar() {
           {t('nav.activeBids')}
         </Link>
 
-        <Link to="/sold" className={styles.link}>{t('nav.sold')}</Link>
-
         <div className={styles.authLinks}>
           <Link to="/login" className={styles.linkBtn}>{t('nav.login')}</Link>
           <Link to="/register" className={styles.linkBtnPrimary}>{t('nav.register')}</Link>

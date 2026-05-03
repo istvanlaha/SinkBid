@@ -18,7 +18,6 @@ export default function Footer() {
           <div className={styles.col}>
             <div className={styles.colTitle}>Buy</div>
             <Link to="/active" className={styles.colLink}>Active Bids</Link>
-            <Link to="/sold" className={styles.colLink}>Sold Items</Link>
             <Link to="/how" className={styles.colLink}>How It Works</Link>
             <Link to="/buyer-registration" className={styles.colLink}>Register as Buyer</Link>
             <Link to="/buyer-terms" className={styles.colLink}>Buyer Terms</Link>
