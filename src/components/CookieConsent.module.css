@@ -188,7 +188,25 @@
 
 .btnConfirm:hover { opacity: 0.85; }
 
-@media (max-width: 480px) {
-  .modal { padding: 1.5rem; }
+@media (max-width: 768px) {
+  .overlay { align-items: flex-end; padding: 0; }
+  .modal {
+    max-width: 100%;
+    margin: 0;
+    border-radius: 12px 12px 0 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.25rem;
+    max-height: 85vh;
+  }
   .actions { flex-direction: column; }
+  .btnReject,
+  .btnConfirm { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .title { font-size: 18px; }
+  .intro { font-size: 12px; }
 }
