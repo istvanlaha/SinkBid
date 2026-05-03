@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { useBidStore } from '../store/bidStore'
 import styles from './Footer.module.css'
 
 const FOOTER_CATS = [
@@ -11,6 +12,7 @@ const FOOTER_CATS = [
 
 export default function Footer() {
   const { t } = useTranslation()
+  const { setCookieModalOpen } = useBidStore()
 
   return (
     <footer className={styles.footer}>
@@ -52,7 +54,7 @@ export default function Footer() {
             <Link to="/contact" className={styles.colLink}>{t('footer.contact')}</Link>
             <Link to="/privacy" className={styles.colLink}>{t('footer.privacy')}</Link>
             <Link to="/terms" className={styles.colLink}>{t('footer.terms')}</Link>
-            <Link to="/cookies" className={styles.colLink}>{t('footer.cookies')}</Link>
+            <span className={styles.colLink} style={{cursor:'pointer'}} onClick={() => setCookieModalOpen(true)}>{t('footer.cookies')}</span>
           </div>
 
           <div className={styles.col}>
@@ -70,7 +72,7 @@ export default function Footer() {
         <div className={styles.bottomRight}>
           <Link to="/terms" className={styles.bottomLink}>{t('footer.termsLink')}</Link>
           <Link to="/privacy" className={styles.bottomLink}>{t('footer.privacyLink')}</Link>
-          <Link to="/cookies" className={styles.bottomLink}>{t('footer.cookiesLink')}</Link>
+          <span className={styles.bottomLink} style={{cursor:'pointer'}} onClick={() => setCookieModalOpen(true)}>{t('footer.cookiesLink')}</span>
         </div>
       </div>
     </footer>

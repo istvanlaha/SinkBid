@@ -14,6 +14,7 @@ import HowItWorks from './pages/HowItWorks'
 import Category from './pages/Category'
 import ProductDetail from './pages/ProductDetail'
 import Auctions from './pages/Auctions'
+import CookieConsent from './components/CookieConsent'
 
 export default function App() {
   return (
@@ -32,6 +33,7 @@ export default function App() {
         </Routes>
       </div>
       <Footer />
+      <CookieConsent />
     </div>
   )
 }

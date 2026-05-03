@@ -1,0 +1,194 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal {
+  background: var(--white);
+  border-radius: 14px;
+  max-width: 560px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.18);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: var(--text-muted);
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+
+.closeBtn:hover { background: var(--light); }
+
+.title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--dark);
+  margin-bottom: 1rem;
+  padding-right: 2rem;
+}
+
+.intro {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.intro strong { color: var(--dark); }
+
+.btnAcceptAll {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  background: var(--dark);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: opacity 0.15s;
+}
+
+.btnAcceptAll:hover { opacity: 0.85; }
+
+.sectionTitle {
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--teak-gold);
+  margin-bottom: 0.75rem;
+}
+
+.rows {
+  border: 0.5px solid var(--border-light);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.875rem 1rem;
+  border-bottom: 0.5px solid var(--border-light);
+  gap: 1rem;
+}
+
+.row:last-child { border-bottom: none; }
+
+.rowInfo { flex: 1; }
+
+.rowLabel {
+  font-size: 13px;
+  color: var(--dark);
+  margin-bottom: 2px;
+  font-weight: 500;
+}
+
+.rowDesc {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.alwaysOn {
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--teak-gold);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.toggle {
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  background: var(--sand-mid);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  transition: background 0.2s;
+  padding: 0;
+}
+
+.toggleOn { background: var(--dark); }
+
+.toggleKnob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--white);
+  transition: transform 0.2s;
+  display: block;
+}
+
+.toggleOn .toggleKnob { transform: translateX(20px); }
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.btnReject,
+.btnConfirm {
+  flex: 1;
+  padding: 12px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.btnReject {
+  background: var(--light);
+  color: var(--dark);
+  border: 0.5px solid var(--border-light);
+}
+
+.btnReject:hover { opacity: 0.7; }
+
+.btnConfirm {
+  background: var(--dark);
+  color: var(--white);
+  border: none;
+}
+
+.btnConfirm:hover { opacity: 0.85; }
+
+@media (max-width: 480px) {
+  .modal { padding: 1.5rem; }
+  .actions { flex-direction: column; }
+}

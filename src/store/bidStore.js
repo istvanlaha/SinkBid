@@ -346,4 +346,7 @@ export const useBidStore = create((set, get) => ({
   getByCategory: (catId) => {
     return get().products.filter(p => p.category === catId)
   },
+
+  cookieModalOpen: false,
+  setCookieModalOpen: (val) => set({ cookieModalOpen: val }),
 }))
