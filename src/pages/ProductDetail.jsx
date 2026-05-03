@@ -52,7 +52,7 @@ export default function ProductDetail() {
 
   const step = getBidStep(product.originalPrice)
   const savings = Math.round((1 - state.currentPrice / product.originalPrice) * 100)
-  const images = [product.image, product.image, product.image, product.image].filter(Boolean)
+  const images = (product.images?.length ? product.images : [product.image]).filter(Boolean)
   const isUrgent = state.timerSeconds <= 60 && state.buying
   const lang = i18n.language || 'hu'
 
