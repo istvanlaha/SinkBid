@@ -5,10 +5,9 @@ const resources = {
   hu: {
     translation: {
       nav: {
-        activeBids: 'Aktív licitek',
-        sold: 'Eladott tárgyak',
+        activeBids: 'Sikeres aukciók',
         howItWorks: 'Hogyan működik',
-        categories: 'Kategóriák',
+        categories: 'Aukciók',
         login: 'Bejelentkezés',
         register: 'Regisztráció',
       },
@@ -83,10 +82,9 @@ const resources = {
   en: {
     translation: {
       nav: {
-        activeBids: 'Live Auctions',
-        sold: 'Sold',
+        activeBids: 'Successful Auctions',
         howItWorks: 'How It Works',
-        categories: 'Categories',
+        categories: 'Auctions',
         login: 'Sign In',
         register: 'Register',
       },
@@ -161,10 +159,9 @@ const resources = {
   de: {
     translation: {
       nav: {
-        activeBids: 'Laufende Auktionen',
-        sold: 'Verkauft',
+        activeBids: 'Erfolgreiche Auktionen',
         howItWorks: 'Wie es funktioniert',
-        categories: 'Kategorien',
+        categories: 'Auktionen',
         login: 'Anmelden',
         register: 'Registrieren',
       },
