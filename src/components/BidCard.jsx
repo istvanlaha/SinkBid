@@ -119,12 +119,12 @@ export default function BidCard({ product }) {
         <div className={styles.btnRow}>
           {!state.joined ? (
             <button className={styles.btnJoin} onClick={() => joinBid(product.id)}>
-              Licitálok — {formatPrice(step, currency)}
+              {t('bid.joinAction')} — {formatPrice(step, currency)}
             </button>
           ) : (
             <>
               <button className={styles.btnJoined} disabled>
-                Belépve ✓
+                {t('bid.joined')} ✓
               </button>
               <button className={styles.btnBuyNow} onClick={() => startBuy(product.id)}>
                 {t('bid.buyNow')}

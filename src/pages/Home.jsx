@@ -60,6 +60,9 @@ export default function Home() {
           <br />{t('hero.title3')}
         </h1>
         <p className={styles.heroSub}>{t('hero.subtitle')}</p>
+        <div className={styles.heroPulse}>
+          🔴 {t('hero.pulse')}
+        </div>
         <div className={styles.heroStats}>
           <div className={styles.heroStat}>
             <div className={styles.heroStatN}>{products.length}</div>
@@ -79,7 +82,7 @@ export default function Home() {
       <main className={styles.main} id="active-bids">
 
         <div className={styles.currencyBar}>
-          <span className={styles.currencyLabel}>Currency:</span>
+          <span className={styles.currencyLabel}>{t('bid.currency')}:</span>
           <button
             className={`${styles.currencyBtn} ${currency === 'EUR' ? styles.currencyActive : ''}`}
             onClick={() => setCurrency('EUR')}
@@ -96,12 +99,12 @@ export default function Home() {
           return (
             <section key={cat.id} className={styles.catSection}>
               <div className={styles.catSectionHead}>
-                <h2 className={styles.catSectionTitle}>{cat.label}</h2>
+                <h2 className={styles.catSectionTitle}>{t('categories.' + cat.id)}</h2>
                 <span
                   className={styles.catSectionLink}
                   onClick={() => navigate(`/category/${cat.id}`)}
                 >
-                  View all →
+                  {t('bid.viewAll')}
                 </span>
               </div>
               <div className={styles.catGrid}>
@@ -127,7 +130,7 @@ export default function Home() {
                         <div className={styles.miniLiveBanner}>
                           <div className={styles.miniLiveBadge}>
                             <span className={styles.miniLiveDot} />
-                            Live
+                            {t('bid.live')}
                           </div>
                           <div className={styles.miniSavingBadge}>-{savings}%</div>
                         </div>
@@ -152,7 +155,7 @@ export default function Home() {
                         </div>
                         <div className={styles.miniCardFooter}>
                           <span className={styles.miniCardStep}>
-                            Step: {formatPrice(step, currency)}
+                            {t('bid.step')}: {formatPrice(step, currency)}
                           </span>
                           <span className={styles.miniCardSaving}>-{savings}%</span>
                         </div>
@@ -177,7 +180,7 @@ export default function Home() {
             ))}
           </div>
           <div className={styles.bidStepBox}>
-            <div className={styles.bidStepTitle}>Entry fee & bid step</div>
+            <div className={styles.bidStepTitle}>{t('bid.entryFeeTitle')}</div>
            <div className={styles.bidStepGrid}>
   <div className={styles.bidStepItem}><span className={styles.bidStepRange}>100 — 1.000 EUR</span><span className={styles.bidStepVal}>5 EUR</span></div>
   <div className={styles.bidStepItem}><span className={styles.bidStepRange}>1.001 — 10.000 EUR</span><span className={styles.bidStepVal}>10 EUR</span></div>

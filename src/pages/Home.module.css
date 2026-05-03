@@ -362,6 +362,15 @@
   color: var(--teak-gold);
 }
 
+.heroPulse {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--teak-muted);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  opacity: 0.85;
+}
+
 @media (max-width: 1024px) {
   .catGrid { grid-template-columns: repeat(3, 1fr); }
 }
