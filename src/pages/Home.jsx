@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { useBidStore, CATEGORIES } from '../store/bidStore'
 import BidCard from '../components/BidCard'
 import styles from './Home.module.css'
+import hwStyles from './HowItWorks.module.css'
 
 const SHOWCASE_CATEGORIES = [
   { id: 'orak', label: 'Watches' },
@@ -71,6 +72,32 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <div className={hwStyles.modelBox} style={{ margin: '0', borderRadius: '0', border: 'none' }}>
+        <h2 className={hwStyles.modelTitle}>A SinkBid működése</h2>
+        <div className={hwStyles.modelGrid}>
+          <div className={hwStyles.modelItem}>
+            <div className={hwStyles.modelLabel}>BETEKINTÉSI DÍJ</div>
+            <div className={hwStyles.modelVal}>Ártól függő</div>
+            <div className={hwStyles.modelDesc}>Beleszámít a végső vételárba</div>
+          </div>
+          <div className={hwStyles.modelItem}>
+            <div className={hwStyles.modelLabel}>BETEKINTÉSI DÍJ = ÁRCSÖKKENTÉS</div>
+            <div className={hwStyles.modelVal}>Aukció</div>
+            <div className={hwStyles.modelDesc}>Az eladóhoz kerül a végleges vételárral együtt</div>
+          </div>
+          <div className={hwStyles.modelItem}>
+            <div className={hwStyles.modelLabel}>NYERTES AUKCIÓ</div>
+            <div className={hwStyles.modelVal}>A termék kifizetése</div>
+            <div className={hwStyles.modelDesc}>Szállítás módjának kiválasztása</div>
+          </div>
+          <div className={hwStyles.modelItem}>
+            <div className={hwStyles.modelLabel}>Termék átvétele</div>
+            <div className={hwStyles.modelVal}>Visszajelzés</div>
+            <div className={hwStyles.modelDesc}>ÖRÖM-BOLDOGSÁG</div>
+          </div>
+        </div>
+      </div>
 
       <main className={styles.main} id="active-bids">
 
