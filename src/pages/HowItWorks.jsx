@@ -55,9 +55,9 @@ export default function HowItWorks() {
             <div className={styles.stepN}>02</div>
             <div className={styles.stepContent}>
               <h3 className={styles.stepTitle} style={{whiteSpace: 'nowrap'}}>Fizess betekintési díjat — az ár azonnal csökken</h3>
-              <p className={styles.stepDesc}>A betekintési díj befizetésével belépsz a licitbe és élőben látod az aktuális árat.</p>
+              <p className={styles.stepDesc}>A betekintési díj befizetésével belépsz az aukció felületére és élőben látod<br />az aktuális árat, hogy pillanatnyilag mennyiért viheted el azonnal.</p>
               <p className={styles.stepDesc}><strong>Ez az összeg beleszámít a végső vételárba.</strong></p>
-              <p className={styles.stepDesc}>Fontos: egyetlen betekintési díj befizetésével már jogod van a terméket bármely áron elvinni — akkor is, ha az ár azóta tovább csökkent mások befizetései miatt. Ha úgy döntesz hogy megveszed, 5 percen belül ki kell fizetned a fennmaradó összeget.</p>
+              <p className={styles.stepDesc}>Fontos: egyetlen betekintési díj befizetésével már jogod van a terméket bármely<br />áron elvinni — akkor is, ha az ár azóta tovább csökkent mások befizetései miatt.<br />Ha úgy döntesz hogy megveszed, 5 percen belül ki kell fizetned a fennmaradó összeget.</p>
               <p className={styles.stepDesc}>A betekintési díj mértéke a termék árától függ:</p>
               <div className={styles.bidStepTable}>
                 <div className={styles.bidStepRow}><span>100 — 1.000 EUR</span><span className={styles.bidStepVal}>5 EUR</span></div>
