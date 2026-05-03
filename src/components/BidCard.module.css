@@ -335,7 +335,9 @@
   text-decoration: line-through;
 }
 
-.stepBox { text-align: right; }
+.priceTop { flex: 1; }
+
+.stepRow { text-align: right; }
 
 .stepLabel {
   font-size: 9px;
@@ -355,8 +357,8 @@
   font-size: 10px;
   color: var(--teak-muted);
   letter-spacing: 1px;
-  display: block;
-  margin-top: 2px;
+  display: inline;
+  margin-left: 4px;
 }
 
 .btnRow {

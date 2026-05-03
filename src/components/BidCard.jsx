@@ -135,21 +135,23 @@ export default function BidCard({ product }) {
         <p className={styles.desc}>{product.description.substring(0, 80)}...</p>
 
         <div className={styles.priceRow}>
-          <div>
-            <div className={styles.priceLabel}>{t('bid.currentPrice')}</div>
-            <div className={styles.priceGroup}>
-              <span className={styles.price} ref={priceRef}>
-                {formatPrice(state.currentPrice, currency)}
-              </span>
-              <span className={styles.priceOrig}>{formatPrice(product.originalPrice, currency)}</span>
+          <div className={styles.priceTop}>
+            <div>
+              <div className={styles.priceLabel}>{t('bid.currentPrice')}</div>
+              <div className={styles.priceGroup}>
+                <span className={styles.price} ref={priceRef}>
+                  {formatPrice(state.currentPrice, currency)}
+                </span>
+                <span className={styles.priceOrig}>{formatPrice(product.originalPrice, currency)}</span>
+              </div>
             </div>
           </div>
-          <div className={styles.stepBox}>
+          <div className={styles.stepRow}>
             <div className={styles.stepLabel}>{t('bid.step')}</div>
             <div className={styles.stepVal}>
-                {formatPrice(step, currency)}
-                <span className={styles.stepUnit}>{t('bid.stepUnit')}</span>
-              </div>
+              {formatPrice(step, currency)}
+              <span className={styles.stepUnit}>{t('bid.stepUnit')}</span>
+            </div>
           </div>
         </div>
 
