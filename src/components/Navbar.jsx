@@ -56,7 +56,7 @@ export default function Navbar() {
       <Link to="/" className={styles.logo}>
         <img src="/images/logo.png" alt="" className={styles.logoImg} />
         <span className={styles.logoText}>
-          S<span className={styles.logoArrow}>↓</span>NK<span className={styles.logoBid}>B<span className={styles.logoArrow}>↓</span>d</span>
+          S<span className={styles.logoArrow}>↓</span>NK<span className={styles.logoBid}>Bid</span>
         </span>
       </Link>
       <div className={styles.right}>
