@@ -44,6 +44,8 @@ const resources = {
         viewAll: 'Összes megtekintése →',
         joinAction: 'Betekintek',
         microCopy: 'Egyszeri belépő — aztán tied a döntés',
+        watchers: 'licitáló',
+        watching: 'néző',
       },
       categories: {
         all: 'Összes',
@@ -131,6 +133,8 @@ const resources = {
         viewAll: 'View all →',
         joinAction: 'Join',
         microCopy: 'One-time entry — then it\'s your call',
+        watchers: 'bidders',
+        watching: 'watching',
       },
       categories: {
         all: 'All',
@@ -217,6 +221,8 @@ const resources = {
         viewAll: 'Alle anzeigen →',
         joinAction: 'Bieten',
         microCopy: 'Einmalige Gebühr — dann nur den Preis beobachten',
+        watchers: 'Bieter',
+        watching: 'zuschauen',
       },
       categories: {
         all: 'Alle',

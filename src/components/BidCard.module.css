@@ -212,6 +212,52 @@
   letter-spacing: 0.5px;
 }
 
+.tensionBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+  background: var(--sand);
+  border-bottom: 0.5px solid var(--border-light);
+}
+
+.tensionLeft,
+.tensionRight {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.tensionDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #E74C3C;
+  display: inline-block;
+  flex-shrink: 0;
+  animation: livePulse 1.4s ease-in-out infinite;
+}
+
+.tensionText {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--teak-muted);
+}
+
+.tensionCount {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--sand-dark);
+  letter-spacing: 0.5px;
+}
+
+.tensionEye {
+  font-size: 11px;
+  opacity: 0.55;
+  line-height: 1;
+}
+
 .body {
   padding: 1rem 1.1rem;
   display: flex;

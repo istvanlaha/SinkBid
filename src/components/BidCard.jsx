@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { useBidStore, getBidStep, EUR_TO_USD } from '../store/bidStore'
@@ -42,6 +42,27 @@ export default function BidCard({ product }) {
     }
     prevPrice.current = state.currentPrice
   }, [state.currentPrice])
+
+  const [watchers, setWatchers] = useState(() =>
+    Math.round(state.biddersCount * (2.5 + Math.random() * 1.5))
+  )
+
+  useEffect(() => {
+    let timeout
+    function tick() {
+      const delay = (8 + Math.random() * 7) * 1000
+      timeout = setTimeout(() => {
+        setWatchers(w => {
+          const delta = Math.floor(Math.random() * 3) + 1
+          const change = Math.random() < 0.5 ? delta : -delta
+          return Math.max(state.biddersCount, w + change)
+        })
+        tick()
+      }, delay)
+    }
+    tick()
+    return () => clearTimeout(timeout)
+  }, [state.biddersCount])
 
   const savings = Math.round((1 - state.currentPrice / product.originalPrice) * 100)
   const step = getBidStep(product.originalPrice)
@@ -92,6 +113,19 @@ export default function BidCard({ product }) {
             {t('bid.live')}
           </div>
           <div className={styles.savingBadge}>-{savings}%</div>
+        </div>
+      </div>
+
+      <div className={styles.tensionBar}>
+        <div className={styles.tensionLeft}>
+          <span className={styles.tensionDot} />
+          <span className={styles.tensionCount}>{state.biddersCount}</span>
+          <span className={styles.tensionText}>{t('bid.watchers')}</span>
+        </div>
+        <div className={styles.tensionRight}>
+          <span className={styles.tensionEye}>👁</span>
+          <span className={styles.tensionText}>{t('bid.watching')}</span>
+          <span className={styles.tensionCount}>{watchers}</span>
         </div>
       </div>
 
