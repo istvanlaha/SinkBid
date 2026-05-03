@@ -54,7 +54,10 @@ export default function Navbar() {
   return (
     <nav className={styles.nav}>
       <Link to="/" className={styles.logo}>
-        Sink<span>Bid</span>
+        <img src="/images/logo.png" alt="" className={styles.logoImg} />
+        <span className={styles.logoText}>
+          S<span className={styles.logoArrow}>↓</span>NK<span className={styles.logoBid}>B<span className={styles.logoArrow}>↓</span>d</span>
+        </span>
       </Link>
       <div className={styles.right}>
 
