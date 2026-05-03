@@ -79,7 +79,8 @@ export default function HowItWorks() {
             <div className={styles.stepN}>03</div>
             <div className={styles.stepContent}>
               <h3 className={styles.stepTitle}>Figyeld az árat</h3>
-              <p className={styles.stepDesc}>Minden új betekintési díj csökkenti az árat a díj összegével.<br />Te döntöd el mikor megfelelő az ár Neked — nincs időkorlát,<br />az aukció addig tart amíg valaki úgy dönt, Neki jó az ár<br />és elviszi a terméket.</p>
+              <p className={styles.stepDesc}>Minden új betekintési díj csökkenti az árat a díj összegével.</p>
+              <p className={styles.stepDesc}>Te döntöd el mikor megfelelő az ár Neked — nincs időkorlát,<br />az aukció addig tart amíg valaki úgy dönt, Neki jó az ár és elviszi a terméket.</p>
             </div>
           </div>
 
