@@ -16,6 +16,10 @@ import Category from './pages/Category'
 import ProductDetail from './pages/ProductDetail'
 import Auctions from './pages/Auctions'
 import CookieConsent from './components/CookieConsent'
+import Terms from './pages/Terms'
+import Privacy from './pages/Privacy'
+import HelpCenter from './pages/HelpCenter'
+import SellerGuide from './pages/SellerGuide'
 
 export default function App() {
   return (
@@ -32,6 +36,10 @@ export default function App() {
           <Route path="/how" element={<HowItWorks />} />
           <Route path="/category/:catId" element={<Category />} />
           <Route path="/product/:productId" element={<ProductDetail />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/help" element={<HelpCenter />} />
+          <Route path="/seller-guide" element={<SellerGuide />} />
         </Routes>
       </div>
       <Footer />
