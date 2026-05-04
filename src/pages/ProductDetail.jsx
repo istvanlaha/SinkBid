@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useBidStore, getBidStep, EUR_TO_USD } from '../store/bidStore'
+import { getProductName, getProductDesc } from '../i18n/productTranslations'
 import styles from './ProductDetail.module.css'
 
 function formatPrice(price, currency) {
@@ -226,8 +227,8 @@ export default function ProductDetail() {
 
         <div className={styles.right}>
           <div className={styles.catLabel}>{t(`categories.${product.category}`)}</div>
-          <h1 className={styles.title}>{product.name}</h1>
-          <p className={styles.desc}>{product.description}</p>
+          <h1 className={styles.title}>{getProductName(product, lang)}</h1>
+          <p className={styles.desc}>{getProductDesc(product, lang)}</p>
 
           <div className={styles.priceBox}>
             <div className={styles.priceRow}>

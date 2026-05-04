@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { useBidStore, getBidStep, EUR_TO_USD } from '../store/bidStore'
+import { getProductName, getProductDesc } from '../i18n/productTranslations'
 import styles from './BidCard.module.css'
 function formatTime(seconds) {
   const m = Math.floor(seconds / 60)
@@ -18,7 +19,7 @@ function formatPrice(price, currency) {
 
 export default function BidCard({ product }) {
   const { t } = useTranslation()
-  const { bidStates, joinBid, startBuy, cancelBuy, tickTimer, completePurchase, currency } = useBidStore()
+  const { bidStates, joinBid, startBuy, cancelBuy, tickTimer, completePurchase, currency, lang } = useBidStore()
   const navigate = useNavigate()
   const state = bidStates[product.id]
   const timerRef = useRef(null)
@@ -158,8 +159,8 @@ export default function BidCard({ product }) {
 
       <div className={styles.body}>
        <div className={styles.catLabel}>{t(`categories.${product.category}`)}</div>
-        <h3 className={styles.name} onClick={() => navigate(`/product/${product.id}`)} style={{cursor: 'pointer'}}>{product.name}</h3>
-        <p className={styles.desc}>{product.description.substring(0, 80)}...</p>
+        <h3 className={styles.name} onClick={() => navigate(`/product/${product.id}`)} style={{cursor: 'pointer'}}>{getProductName(product, lang)}</h3>
+        <p className={styles.desc}>{getProductDesc(product, lang).substring(0, 80)}...</p>
 
         {state.biddersCount > 0 && secondsAgo !== null && (
           <div key={secondsAgo} className={styles.urgencyLabel}>

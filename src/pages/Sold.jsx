@@ -2,6 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet-async'
 import { useTranslation } from 'react-i18next'
 import { useBidStore } from '../store/bidStore'
+import { getProductName } from '../i18n/productTranslations'
 import styles from './Sold.module.css'
 
 const SHOWCASE_CATEGORIES = [
@@ -20,7 +21,7 @@ function getSalePrice(originalPrice) {
 
 export default function Sold() {
   const { t } = useTranslation()
-  const { getByCategory } = useBidStore()
+  const { getByCategory, lang } = useBidStore()
 
   const hasItems = SHOWCASE_CATEGORIES.some(cat => getByCategory(cat.id).length > 0)
 
@@ -79,7 +80,7 @@ export default function Sold() {
                           <div className={styles.soldOverlay} />
                         </div>
                         <div className={styles.miniCardBody}>
-                          <div className={styles.miniCardName}>{product.name}</div>
+                          <div className={styles.miniCardName}>{getProductName(product, lang)}</div>
                           <div className={styles.priceBlock}>
                             <div className={styles.priceRow}>
                               <span className={styles.priceLabel}>{t('sold.startingPrice')}</span>
