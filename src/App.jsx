@@ -20,6 +20,7 @@ import Terms from './pages/Terms'
 import Privacy from './pages/Privacy'
 import HelpCenter from './pages/HelpCenter'
 import SellerGuide from './pages/SellerGuide'
+import Vasarlas from './pages/Vasarlas'
 
 export default function App() {
   return (
@@ -40,6 +41,7 @@ export default function App() {
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/help" element={<HelpCenter />} />
           <Route path="/seller-guide" element={<SellerGuide />} />
+          <Route path="/vasarlas" element={<Vasarlas />} />
         </Routes>
       </div>
       <Footer />

@@ -75,7 +75,7 @@ function CategorySection({ cat, labels }) {
 }
 
 export default function SellerGuide() {
-  const { i18n } = useTranslation()
+  const { t, i18n } = useTranslation()
   const lang = (i18n.language || 'hu').split('-')[0]
   const labels = LABELS[lang] || LABELS.hu
   const cats = CATEGORIES[lang] || CATEGORIES.hu
