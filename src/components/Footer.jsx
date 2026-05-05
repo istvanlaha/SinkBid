@@ -30,10 +30,11 @@ export default function Footer() {
         <div className={styles.cols}>
           <div className={styles.col}>
             <div className={styles.colTitle}>{t('footer.buyCol')}</div>
+            <Link to="/vasarlas?tab=regisztracio" className={styles.colLink}>{t('footer.buyerReg')}</Link>
             <Link to="/auctions" className={styles.colLink}>{t('footer.activeBids')}</Link>
             <Link to="/how" className={styles.colLink}>{t('footer.howItWorks')}</Link>
-            <Link to="/buyer-registration" className={styles.colLink}>{t('footer.buyerReg')}</Link>
-            <Link to="/buyer-terms" className={styles.colLink}>{t('footer.buyerTerms')}</Link>
+            <Link to="/vasarlas?tab=feltetelek" className={styles.colLink}>{t('footer.buyerTerms')}</Link>
+            <Link to="/vasarlas?tab=tajekoztato" className={styles.colLink}>{t('footer.buyerInfo')}</Link>
           </div>
 
           <div className={styles.col}>

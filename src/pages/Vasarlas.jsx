@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
+import { useSearchParams } from 'react-router-dom'
 import styles from './Vasarlas.module.css'
 
 const MENU = [
@@ -114,7 +115,16 @@ const CONTENT_MAP = {
 }
 
 export default function Vasarlas() {
-  const [active, setActive] = useState('regisztracio')
+  const [searchParams] = useSearchParams()
+  const tabParam = searchParams.get('tab')
+  const validTabs = MENU.map(m => m.id)
+  const [active, setActive] = useState(
+    validTabs.includes(tabParam) ? tabParam : 'regisztracio'
+  )
+
+  useEffect(() => {
+    if (validTabs.includes(tabParam)) setActive(tabParam)
+  }, [tabParam])
 
   return (
     <div className={styles.wrap}>
