@@ -21,6 +21,7 @@ import Privacy from './pages/Privacy'
 import HelpCenter from './pages/HelpCenter'
 import SellerGuide from './pages/SellerGuide'
 import Vasarlas from './pages/Vasarlas'
+import Ertekesites from './pages/Ertekesites'
 
 export default function App() {
   return (
@@ -42,6 +43,7 @@ export default function App() {
           <Route path="/help" element={<HelpCenter />} />
           <Route path="/seller-guide" element={<SellerGuide />} />
           <Route path="/vasarlas" element={<Vasarlas />} />
+          <Route path="/ertekesites" element={<Ertekesites />} />
         </Routes>
       </div>
       <Footer />
